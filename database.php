@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db_name = 'fik-corner';
+$db_name = 'fik_corner';
 
 $connection = new mysqli($host, $user, $pass, $db_name);
 

@@ -2,7 +2,7 @@
 
 $route = isset($_GET['route']) ? basename($_GET['route'], ".php") : 'home';
 
-$file = "pages/{$route}/{$route}.php";
+$file = "pages/{$route}.php";
 
 // Periksa apakah file ada
 if (file_exists($file)) {
