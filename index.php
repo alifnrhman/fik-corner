@@ -1,5 +1,7 @@
 <?php
 
+define('BASE_PATH', __DIR__);
+
 $route = isset($_GET['route']) ? basename($_GET['route'], ".php") : 'home';
 
 $file = "pages/{$route}.php";

@@ -1,5 +1,6 @@
 <?php
-   require_once '../config/database.php';
+   require_once BASE_PATH . '/database.php';
+
 
    session_start();
 

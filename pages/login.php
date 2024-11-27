@@ -6,7 +6,8 @@
 		header("location: home.php");
 	}
 
-   include '../database.php';
+   require_once BASE_PATH . '/database.php';
+
 
 ?>
 
