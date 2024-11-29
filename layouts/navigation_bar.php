@@ -123,9 +123,9 @@
          </svg>
       </button>
 
-      <div class='flex lg:ml-auto max-lg:w-full'>
+      <div class='flex lg:mr-auto lg:ml-20 max-lg:w-full'>
          <div
-            class='flex xl:w-80 max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
+            class='flex xl:w-96 max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
             <input type='text' placeholder='Search something...'
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px"
@@ -149,34 +149,39 @@
                die ("Query error: " . mysqli_errno($connection) . " - " . mysqli_error($connection));
             }
 
-            echo "<div class='flex items-center max-sm:ml-auto space-x-6'>" .
-               "<i class='fa-regular fa-bell fa-lg cursor-pointer px-2' style='color: #6b7280'></i>" .
-               "<ul>" .
-                  "<li class='group relative px-1'>" .
-                     "<div class='py-2'>" .
-                        "<i class='fa-solid fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
-                        // "<span class='ps-3 border-solid border-1 border-slate-800 text-gray-800 font-medium'>" . $data['nama_lengkap'] . "</span>" .
-                     "</div>" .
-                     "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
-                        "<h6 class='font-semibold text-[15px]'>" . $data['nama_lengkap'] . "</h6>" .
-                        "<p class='text-sm text-gray-500 mt-1'>" . $_SESSION['nim'] . "</p>" .
-                        "<hr class='border-b-0 my-4' />" .
-                        "<ul class='space-y-1.5'>" .
-                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Order</a></li>" .
-                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Wishlist</a></li>" .
-                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Gift Cards</a></li>" .
-                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Contact Us</a></li>" .
-                        "</ul>" .
-                        "<hr class='border-b-0 my-4' />" .
-                        "<ul class='space-y-1.5'>" .
-                           "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
-                           <i class='fa-solid fa-arrow-right-from-bracket'></i>
-                           Log out</a>
-                           </li>" .
-                        "</ul>" .
-                     "</div>" .
-                  "</li>" .
-               "</ul>" .
+            echo
+            "<div class='flex items-center max-sm:ml-auto space-x-6'>" .
+               "<div class=''>" .
+                  "<i class='fa-regular fa-bell fa-lg cursor-pointer px-2' style='color: #6b7280'></i>" .
+               "</div>" .
+               "<div>" .
+                  "<ul>" .
+                     "<li class='group relative px-1'>" .
+                        "<div class='py-2'>" .
+                           "<i class='fa-solid fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
+                           "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $data['nama_lengkap'] . "</span>" .
+                        "</div>" .
+                        "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
+                           "<h6 class='font-semibold text-[15px]'>" . $data['nama_lengkap'] . "</h6>" .
+                           "<p class='text-sm text-gray-500 mt-1'>" . $_SESSION['nim'] . "</p>" .
+                           "<hr class='border-b-0 my-4' />" .
+                           "<ul class='space-y-1.5'>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Order</a></li>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Wishlist</a></li>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Gift Cards</a></li>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Contact Us</a></li>" .
+                           "</ul>" .
+                           "<hr class='border-b-0 my-4' />" .
+                           "<ul class='space-y-1.5'>" .
+                              "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
+                              <i class='fa-solid fa-arrow-right-from-bracket'></i>
+                              Log out</a>
+                              </li>" .
+                           "</ul>" .
+                        "</div>" .
+                     "</li>" .
+                  "</ul>" .
+               "</div>" .
             "</div>" ;
 
          } else {
