@@ -30,7 +30,7 @@
             $_SESSION['nama'] = $data['nama'];
 
             setcookie('message', '', time() - 60);
-            header('location: index.php');
+            header('location: index');
          }
       }
    }

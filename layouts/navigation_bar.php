@@ -1,6 +1,6 @@
-<header class='flex border-b py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+<header class='flex border-b py-4 px-6 sm:px-28 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
    <div class='flex flex-wrap items-center gap-5 w-full'>
-      <a href="javascript:void(0)"><img src="assets\fik-corner-logo.png" alt="logo" class='h-7' />
+      <a href="index"><img src="assets\fik-corner-logo.png" alt="logo" class='h-7' />
       </a>
 
       <div id="collapseMenu"
@@ -30,7 +30,7 @@
                   </svg>
                </a>
                <div
-                  class='absolute hidden group-hover:block shadow-lg bg-white lg:gap-16 gap-8 px-6 pb-4 py-4 lg:top-14 top-28 left-50 w-80 z-50'>
+                  class='absolute hidden group-hover:block shadow-lg bg-white lg:gap-16 gap-8 px-6 pb-4 py-4 lg:top-12 top-28 left-50 w-80 z-50'>
                   <ul class='space-y-3'>
                      <li class="text-primary text-base font-semibold px-2">Kategori</li>
                      <li class='hover:bg-gray-100'>
@@ -90,7 +90,6 @@
                                  d="M434.1 243.904h-5.955a95.572 95.572 0 0 1-61.022-22.072l-117.812-98.055a49.716 49.716 0 0 0-31.743-11.481c-27.361 0-49.621 22.26-49.621 49.621v11.586c0 22.572-18.364 40.937-40.937 40.937-15.844 0-30.407-9.279-37.102-23.639l-3.261-6.995c-7.434-15.944-23.604-26.246-41.195-26.246C20.39 157.56 0 177.949 0 203.012v118.792c0 42.954 34.946 77.9 77.9 77.9h356.2c42.954 0 77.9-34.946 77.9-77.9 0-42.954-34.946-77.9-77.9-77.9zm0 125.8H77.9c-17.829 0-33.403-9.799-41.65-24.287h439.5c-8.247 14.488-23.821 24.287-41.65 24.287zM30 315.419V203.012c0-8.521 6.932-15.452 15.452-15.452 5.98 0 11.478 3.503 14.005 8.923l3.261 6.994c11.601 24.884 36.837 40.963 64.293 40.963 39.115 0 70.937-31.822 70.937-70.937v-11.586c0-10.819 8.802-19.621 19.621-19.621a19.66 19.66 0 0 1 12.552 4.54l28.901 24.055-32.93 32.93 21.213 21.213 34.872-34.871 13.031 10.846-31.444 31.444 21.213 21.213 33.386-33.385 13.031 10.846-29.958 29.958 21.213 21.213 32.115-32.115c21.284 15.35 47.024 23.723 73.383 23.723h5.955c24.246 0 44.328 18.112 47.461 41.513H30z"
                                  data-original="#000000" />
                            </svg>
-                           Shoes Store
                         </a>
                      </li>
                      <li class='hover:bg-gray-100'>
@@ -102,7 +101,6 @@
                                  d="M482 303.58V256c0-124.115-101.728-225-226-225C131.875 31 30 131.728 30 256v47.58C12.541 309.772 0 326.445 0 346v60c0 24.813 20.187 45 45 45h17.58c6.192 17.458 22.865 30 42.42 30h30c24.813 0 45-20.187 45-45V316c0-24.813-20.187-45-45-45h-30c-19.555 0-36.228 12.542-42.42 30H60v-45c0-7.463.439-14.826 1.263-22.073 7.08 4.577 15.395 7.073 24.231 7.073 18.909 0 35.847-11.944 42.145-29.72C146.772 157.281 198.356 121 256 121c57.643 0 109.227 36.281 128.36 90.279C390.658 229.056 407.596 241 426.505 241c8.836 0 17.152-2.496 24.232-7.074A195.071 195.071 0 0 1 452 256v45h-2.58c-6.192-17.458-22.865-30-42.42-30h-30c-24.813 0-45 20.187-45 45v120c0 24.813 20.187 45 45 45h30c19.555 0 36.228-12.542 42.42-30H467c24.813 0 45-20.187 45-45v-60c0-19.555-12.541-36.228-30-42.42zM90 316c0-8.271 6.729-15 15-15h30c8.271 0 15 6.729 15 15v120c0 8.271-6.729 15-15 15h-30c-8.271 0-15-6.729-15-15V316zM60 421H45c-8.271 0-15-6.729-15-15v-60c0-8.271 6.729-15 15-15h15v90zm366.505-210c-6.23 0-11.803-3.914-13.867-9.74C389.588 136.208 326.927 91 256 91c-70.85 0-133.566 45.145-156.639 110.261-2.064 5.825-7.636 9.739-13.867 9.739-10.594 0-17.524-10.619-13.919-20.72C98.431 115.036 171.177 61 256 61c84.952 0 157.597 54.152 184.424 129.28 3.608 10.11-3.336 20.72-13.919 20.72zM422 436c0 8.271-6.729 15-15 15h-30c-8.271 0-15-6.729-15-15V316c0-8.271 6.729-15 15-15h30c8.271 0 15 6.729 15 15v120zm60-30c0 8.271-6.729 15-15 15h-15v-90h15c8.271 0 15 6.729 15 15v60z"
                                  data-original="#000000" />
                            </svg>
-                           Headphones
                         </a>
                      </li>
                   </ul>
@@ -140,20 +138,55 @@
       </div>
 
       <?php 
-      if (isset($_SESSION['nim'])) {
-         echo "<div class='flex items-center max-lg:ml-auto space-x-6'>"
-         . "<button
-            class='px-4 py-2 text-[15px] rounded font-semibold text-primary border-2 border-primary hover:bg-primary transition-all ease-in-out duration-300 bg-transparent hover:text-white'>" . $_SESSION['nim'] . "</button>"
-         . "</div>";
+         if (isset($_SESSION['nim'])) {
+            include("connection.php");
+                     
+            $query = "SELECT * FROM users WHERE nim = '" . $_SESSION['nim'] . "'";
+            $result = mysqli_query($connection, $query);
+            $data = mysqli_fetch_array($result);
+   
+            if (!$result) {
+               die ("Query error: " . mysqli_errno($connection) . " - " . mysqli_error($connection));
+            }
 
-      } else {
-         echo "<div class='flex items-center max-lg:ml-auto space-x-6'>"
-         . "<button
-            class='px-4 py-2 text-[15px] rounded font-semibold text-primary border-2 border-primary hover:bg-primary transition-all ease-in-out duration-300 bg-transparent hover:text-white'>Sign
-            up
-            </button>"
-         . "</div>";
-      }
+            echo "<div class='flex items-center max-sm:ml-auto space-x-6'>" .
+               "<i class='fa-regular fa-bell fa-lg cursor-pointer px-2' style='color: #6b7280'></i>" .
+               "<ul>" .
+                  "<li class='group relative px-1'>" .
+                     "<div class='py-2'>" .
+                        "<i class='fa-solid fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
+                        // "<span class='ps-3 border-solid border-1 border-slate-800 text-gray-800 font-medium'>" . $data['nama_lengkap'] . "</span>" .
+                     "</div>" .
+                     "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
+                        "<h6 class='font-semibold text-[15px]'>" . $data['nama_lengkap'] . "</h6>" .
+                        "<p class='text-sm text-gray-500 mt-1'>" . $_SESSION['nim'] . "</p>" .
+                        "<hr class='border-b-0 my-4' />" .
+                        "<ul class='space-y-1.5'>" .
+                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Order</a></li>" .
+                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Wishlist</a></li>" .
+                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Gift Cards</a></li>" .
+                           "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Contact Us</a></li>" .
+                        "</ul>" .
+                        "<hr class='border-b-0 my-4' />" .
+                        "<ul class='space-y-1.5'>" .
+                           "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
+                           <i class='fa-solid fa-arrow-right-from-bracket'></i>
+                           Log out</a>
+                           </li>" .
+                        "</ul>" .
+                     "</div>" .
+                  "</li>" .
+               "</ul>" .
+            "</div>" ;
+
+         } else {
+            echo "<div class='flex items-center max-lg:ml-auto space-x-6'>"
+            . "<button
+               class='px-4 py-2 text-[15px] rounded font-semibold text-primary border-2 border-primary hover:bg-primary transition-all ease-in-out duration-300 bg-transparent hover:text-white'>
+               <a href='login'>Masuk</a>
+               </button>"
+            . "</div>";
+         }
       ?>
    </div>
 </header>
