@@ -14,7 +14,7 @@
 
 <div class="w-full h-full lg:px-28 md:px-14 sm:px-6">
    <div class="mt-8">
-      <p class="font-semibold text-2xl">Event Terbaruu</p>
+      <p class="font-semibold text-2xl">Event Terbaru</p>
    </div>
    <div class='font-[sans-serif]'>
       <div class='max-w-7xl'>
