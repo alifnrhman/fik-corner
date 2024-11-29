@@ -139,16 +139,6 @@
 
       <?php 
          if (isset($_SESSION['nim'])) {
-            include("connection.php");
-                     
-            $query = "SELECT * FROM users WHERE nim = '" . $_SESSION['nim'] . "'";
-            $result = mysqli_query($connection, $query);
-            $data = mysqli_fetch_array($result);
-   
-            if (!$result) {
-               die ("Query error: " . mysqli_errno($connection) . " - " . mysqli_error($connection));
-            }
-
             echo
             "<div class='flex items-center max-sm:ml-auto space-x-6'>" .
                "<div class=''>" .
@@ -159,10 +149,10 @@
                      "<li class='group relative px-1'>" .
                         "<div class='py-2'>" .
                            "<i class='fa-solid fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
-                           "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $data['nama_lengkap'] . "</span>" .
+                           "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $_SESSION['nama'] . "</span>" .
                         "</div>" .
                         "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
-                           "<h6 class='font-semibold text-[15px]'>" . $data['nama_lengkap'] . "</h6>" .
+                           "<h6 class='font-semibold text-[15px]'>" . $_SESSION['nama'] . "</h6>" .
                            "<p class='text-sm text-gray-500 mt-1'>" . $_SESSION['nim'] . "</p>" .
                            "<hr class='border-b-0 my-4' />" .
                            "<ul class='space-y-1.5'>" .
