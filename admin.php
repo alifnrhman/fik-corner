@@ -2,8 +2,8 @@
 	session_start();
    setcookie("message", "");
 
-	if (isset($_SESSION['nim'])) {
-		header("location: index.php");
+	if (isset($_SESSION['username'])) {
+		header("location: dashboard");
 	}
 
    $title = "Admin Login";

@@ -1,9 +1,10 @@
 <?php
    session_start();
 
-   // if(!isset($_SESSION['nim'])) {
-   //    header('location: login');
-   // }
+   if(!isset($_SESSION['username'])) {
+      header('location: admin');
+   }
+   
    $title = "Admin Dashboard";
    include("layouts/header.php");
 ?>
@@ -23,7 +24,7 @@
                <ul class="space-y-2">
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-green-700 text-sm flex items-center cursor-pointer bg-[#d9f3ea] hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 24 24">
                            <path
@@ -38,7 +39,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 60.123 60.123">
                            <path
@@ -53,7 +54,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 64 64">
                            <path
@@ -68,7 +69,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 682.667 682.667">
                            <defs>
@@ -92,7 +93,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 24 24">
                            <path fill-rule="evenodd"
@@ -107,7 +108,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 507.246 507.246">
                            <path
@@ -120,7 +121,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 214.27 214.27">
                            <path
@@ -135,7 +136,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 64 64">
                            <path
@@ -147,7 +148,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 64 64">
                            <path
@@ -167,7 +168,7 @@
                   </li>
                   <li>
                      <a href="javascript:void(0)"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-[#d9f3ea] rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 32 32">
                            <path fill-rule="evenodd"
@@ -267,7 +268,7 @@
                            class="dropdown-content hidden group-hover:block shadow-md p-2 bg-white rounded-md absolute top-[38px] right-0 w-56">
                            <div class="w-full space-y-2">
                               <a href="javascript:void(0)"
-                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-[#d9f3ea] dropdown-item transition duration-300 ease-in-out">
+                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 512 512">
                                     <path
@@ -278,7 +279,7 @@
                               <hr class="my-2 -mx-2" />
 
                               <a href="javascript:void(0)"
-                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-[#d9f3ea] dropdown-item transition duration-300 ease-in-out">
+                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                     class="w-[18px] h-[18px] mr-4 fill-current" viewBox="0 0 24 24">
                                     <path
@@ -290,7 +291,7 @@
                                  </svg>
                                  Dashboard</a>
                               <a href="javascript:void(0)"
-                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-[#d9f3ea] dropdown-item transition duration-300 ease-in-out">
+                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 24 24">
                                     <path
@@ -303,7 +304,7 @@
                                  </svg>
                                  Posts</a>
                               <a href="javascript:void(0)"
-                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-[#d9f3ea] dropdown-item transition duration-300 ease-in-out">
+                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 510 510">
                                     <g fill-opacity=".9">
@@ -316,7 +317,7 @@
                                  </svg>
                                  Schedules</a>
                               <a href="process_logout.php"
-                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-[#d9f3ea] dropdown-item transition duration-300 ease-in-out">
+                                 class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 6 6">
                                     <path

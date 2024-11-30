@@ -3,11 +3,10 @@
    setcookie("message", "");
 
 	if (isset($_SESSION['nim'])) {
-		header("location: index.php");
+		header("location: index");
 	}
-?>
 
-<?php 
+   $title = "Masuk";
    include("layouts/header.php");
 ?>
 <main>

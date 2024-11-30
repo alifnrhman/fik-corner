@@ -23,8 +23,4 @@
    </div>
 </div>
 
-<?php 
-var_dump($_SESSION);
- ?>
-
 <?php include("layouts/footer.php") ?>
