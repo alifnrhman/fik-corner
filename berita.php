@@ -1,7 +1,7 @@
 <?php 
 
    $title = "Berita";
-   include("layouts/header.php");
-   include("layouts/navigation_bar.php");
+   include("includes/header.php");
+   include("includes/navigation_bar.php");
 
 ?>

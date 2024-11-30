@@ -6,12 +6,12 @@
    // }
 
    $title = "Webinar";
-   include("layouts/header.php");
-   include("layouts/navigation_bar.php");
+   include("includes/header.php");
+   include("includes/navigation_bar.php");
 ?>
 
 <h1>
    Webinar
 </h1>
 
-<?php include("layouts/footer.php") ?>
+<?php include("includes/footer.php") ?>

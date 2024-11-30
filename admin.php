@@ -7,7 +7,7 @@
 	}
 
    $title = "Admin Login";
-   include("layouts/header.php");
+   include("includes/header.php");
 ?>
 <main>
    <div class="font-[sans-serif] max-w-7xl mx-auto h-screen">
@@ -83,6 +83,6 @@
 </main>
 
 <?php
-   include("layouts/footer.php");
+   include("includes/footer.php");
    include 'connection.php';
 ?>

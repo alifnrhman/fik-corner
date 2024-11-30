@@ -6,7 +6,7 @@
    }
    
    $title = "Admin Dashboard";
-   include("layouts/header.php");
+   include("includes/header.php");
 ?>
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
@@ -507,4 +507,4 @@
    </div>
 </div>
 
-<?php include("layouts/footer.php") ?>
+<?php include("includes/footer.php") ?>

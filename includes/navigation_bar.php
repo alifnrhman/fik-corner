@@ -82,7 +82,7 @@
          </div>
       </div>
       <div class="">
-         <i class="fa-regular fa-moon fa-lg" style='color: #6b7280'></i>
+         <i class="fa-regular fa-moon fa-lg cursor-pointer" style='color: #6b7280'></i>
       </div>
 
       <?php 
