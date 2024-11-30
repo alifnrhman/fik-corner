@@ -100,20 +100,21 @@
                            "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $_SESSION['nama'] . "</span>" .
                         "</div>" .
                         "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
+                           "<div class=''>" .
                            "<h6 class='font-semibold text-[15px]'>" . $_SESSION['nama'] . "</h6>" .
-                           "<p class='text-sm text-gray-500 mt-1'>" . $_SESSION['nim'] . "</p>" .
+                           "<p class='text-sm text-gray-500'>" . $_SESSION['nim'] . "</p>" .
+                           "</div>" .
                            "<hr class='border-b-0 my-4' />" .
                            "<ul class='space-y-1.5'>" .
-                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Order</a></li>" .
-                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Wishlist</a></li>" .
-                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Gift Cards</a></li>" .
-                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Contact Us</a></li>" .
+                              "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Riwayat Kegiatan</a></li>" .
+                              "<li><a href='javascript:void(0)' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Tersimpan</a></li>" .
                            "</ul>" .
                            "<hr class='border-b-0 my-4' />" .
                            "<ul class='space-y-1.5'>" .
                               "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
                               <i class='fa-solid fa-arrow-right-from-bracket'></i>
-                              Log out</a>
+                              Keluar</a>
                               </li>" .
                            "</ul>" .
                         "</div>" .
