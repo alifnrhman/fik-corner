@@ -4,10 +4,7 @@
    // if(!isset($_SESSION['nim'])) {
    //    header('location: login');
    // }
-?>
-
-
-<?php 
+   $title = "Beranda";
    include("layouts/header.php");
    include("layouts/navigation_bar.php");
 ?>
@@ -25,5 +22,9 @@
       </div>
    </div>
 </div>
+
+<?php 
+var_dump($_SESSION);
+ ?>
 
 <?php include("layouts/footer.php") ?>
