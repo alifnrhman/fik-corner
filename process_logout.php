@@ -2,5 +2,9 @@
    session_start();
    session_destroy();
 
-   header('location: index');
+   if (isset($_SESSION['nim'])) {
+      header('location: index');
+   } else {
+      header('location: admin');
+   }
 ?>
