@@ -4,13 +4,14 @@
    if(!isset($_SESSION['nim'])) {
       header('location: login');
    }
-
-   $title = "Profil Saya";
+   
+   $title = "Kegiatan Tersimpan";
    include("includes/header.php");
    include("includes/navigation_bar.php");
-   include("includes/functions.php");
 ?>
 
-<h1>Profil</h1>
+<h1>
+   Kegiatan Tersimpan
+</h1>
 
 <?php include("includes/footer.php") ?>
