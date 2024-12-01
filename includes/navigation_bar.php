@@ -1,4 +1,5 @@
-<header class='flex border-b py-4 px-6 sm:px-28 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+<header
+   class='flex border-b py-4 px-6 sm:px-28 bg-white font-[sans-serif] min-h-[70px] tracking-wide z-50 fixed top-0 w-full'>
    <div class='flex flex-wrap items-center gap-5 w-full'>
       <a href="index"><img src="assets\fik-corner-logo.png" alt="logo" class='h-7' />
       </a>
@@ -56,6 +57,8 @@
             </li>
             <li class='max-lg:border-b max-lg:py-2'><a href='berita'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Berita</a></li>
+            <li class='max-lg:border-b max-lg:py-2'><a href='berita'
+                  class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Penyelenggara</a></li>
 
          </ul>
       </div>
