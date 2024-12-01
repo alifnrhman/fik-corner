@@ -32,7 +32,7 @@
                $events = get_data($connection, $columns, $table, $join, '', $orderBy, $limit);
                
                foreach($events as $data) {
-                  $data['tanggal'] = format_tanggal(date('Y-m-d'));
+                  $data['tanggal'] = format_tanggal($data['tanggal']);
                   echo
                      "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
                         "<img src='" . $data['foto'] . "' alt='" . $data['nama_kegiatan'] . "' class='w-full h-60 object-cover' />" .
@@ -74,9 +74,4 @@
    </div>
    <!-- End of Kegiatan Terpopuler -->
 </div>
-
-<div class="h-[500px]">
-   <h2>a</h2>
-</div>
-
 <?php include("includes/footer.php") ?>
