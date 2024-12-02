@@ -37,7 +37,10 @@
                      "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
                         "<img src='" . $data['foto'] . "' alt='" . $data['nama_kegiatan'] . "' class='w-full h-60 object-cover' />" .
                         "<div class='p-6'>" .
-                           "<span class='text-sm block text-gray-400 mb-2'>" . $data['tanggal'] . "</span>" .
+                           "<div class='flex justify-between'>" .
+                              "<span class='text-sm block text-gray-400 mb-2'>" . $data['tanggal'] . "</span>" .
+                              "<span class='text-sm block text-gray-400 mb-2'>" . $data['jumlah_peserta'] . " peserta" . "</span>" .
+                           "</div>" .
                            "<div class='h-24'>" .
                               "<h3 class='text-xl font-bold text-gray-800'>" . $data['nama_kegiatan'] . "</h3>" .
                               "<h3 class='text-sm text-gray-500 mt-1'>" . $data['lokasi'] . "</h3>" .

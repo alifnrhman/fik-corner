@@ -57,7 +57,7 @@
             </li>
             <li class='max-lg:border-b max-lg:py-2'><a href='berita'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Berita</a></li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='berita'
+            <li class='max-lg:border-b max-lg:py-2'><a href='penyelenggara'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Penyelenggara</a></li>
 
          </ul>
