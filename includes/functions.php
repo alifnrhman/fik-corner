@@ -39,8 +39,8 @@ function get_data($connection, $columns = '*', $table, $join = '', $where = '', 
             if (isset($row['foto']) && !empty($row['foto'])) {
                 $row['foto'] = 'data:image/jpeg;base64,' . base64_encode($row['foto']);
             }
-            if (isset($row['foto_penyelenggara']) && !empty($row['foto_penyelenggara'])) {
-                $row['foto_penyelenggara'] = 'data:image/jpeg;base64,' . base64_encode($row['foto_penyelenggara']);
+            if (isset($row['logo']) && !empty($row['logo'])) {
+                $row['logo'] = 'data:image/jpeg;base64,' . base64_encode($row['logo']);
             }
             $data[] = $row;
         }

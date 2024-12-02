@@ -74,7 +74,7 @@
       <div class='flex ml-auto mr-20 max-lg:w-full'>
          <div
             class='flex xl:w-[30rem] max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
-            <input type='text' placeholder='Search something...'
+            <input type='text' placeholder='Cari seminar, webinar, atau lomba...'
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px"
                class="cursor-pointer fill-gray-400">
@@ -85,7 +85,7 @@
          </div>
       </div>
       <div class="">
-         <i class="fa-regular fa-moon fa-lg cursor-pointer" style='color: #6b7280'></i>
+         <i class="fa-solid fa-moon fa-lg cursor-pointer" style='color: #6b7280'></i>
       </div>
 
       <?php 
@@ -93,13 +93,13 @@
             echo
             "<div class='flex items-center max-sm:ml-auto space-x-5'>" .
                "<div class=''>" .
-                  "<i class='fa-regular fa-bell fa-lg cursor-pointer' style='color: #6b7280'></i>" .
+                  "<i class='fa-solid fa-bell fa-lg cursor-pointer' style='color: #6b7280'></i>" .
                "</div>" .
                "<div>" .
                   "<ul>" .
                      "<li class='group relative px-1'>" .
                         "<div class='py-2'>" .
-                           "<i class='fa-regular fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
+                           "<i class='fa-solid fa-circle-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
                            "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $_SESSION['nama'] . "</span>" .
                         "</div>" .
                         "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
