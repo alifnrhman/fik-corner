@@ -1,4 +1,4 @@
-<footer class="bg-white font-sans tracking-wide">
+<footer class="bg-white font-sans tracking-wide w-full">
    <div class="py-12 px-28">
       <div class="flex flex-wrap items-center sm:justify-between max-sm:flex-col gap-6">
          <div class="grayscale">
@@ -18,6 +18,7 @@
       <p class='text-center text-gray-500 text-base'>© FIK Corner. All rights reserved.</p>
    </div>
 </footer>
+<script src="https://kit.fontawesome.com/3102659666.js" crossorigin="anonymous"></script>
 <script src="js\scripts.js"></script>
 </body>
 </html>

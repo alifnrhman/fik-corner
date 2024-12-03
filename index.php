@@ -10,7 +10,11 @@
    include("includes/functions.php");
 ?>
 
-<div class="w-full h-full py-20 lg:px-28 md:px-14 sm:px-6">
+<main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6">
+   <!-- Carousel -->
+
+   <!-- End of Carousel -->
+
    <!-- Kegiatan Terpopuler -->
    <div class='my-14'>
       <div>
@@ -320,5 +324,5 @@
 
 
 
-</div>
+</main>
 <?php include("includes/footer.php") ?>
