@@ -1,5 +1,5 @@
 <footer class="bg-white font-sans tracking-wide w-full">
-   <div class="py-12 px-28">
+   <div class="py-10 px-28">
       <div class="flex flex-wrap items-center sm:justify-between max-sm:flex-col gap-6">
          <div class="grayscale">
             <a href='javascript:void(0)'><img src="assets\fik-corner-logo.png" alt="logo" class='w-44 ' /></a>

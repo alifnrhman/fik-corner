@@ -10,11 +10,7 @@
    include("includes/functions.php");
 ?>
 
-<main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6">
-   <!-- Carousel -->
-
-   <!-- End of Carousel -->
-
+<main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <!-- Kegiatan Terpopuler -->
    <div class='my-14'>
       <div>

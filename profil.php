@@ -14,7 +14,6 @@
 
 <main class="w-full flex-grow pt-20 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28">
    <div class="max-w-lg max-md:mx-auto w-full my-5">
-      <i class='fa-regular fa-user fa-lg cursor-pointer' style='color: #6b7280;'></i>
       <span class='font-semibold text-xl'>Profil Saya</span>
    </div>
 
@@ -35,9 +34,8 @@
       <div class="mb-3">
          <input type="hidden" name="foto" value="<?= $data[0]['foto']; ?>">
          <?php
-             echo "<td><img src='img/" . $data[0]['foto'] . "' style='max-width: 60px; height: auto;'></td>";
+             echo "<td><img src='" . $data[0]['foto'] . "' style='max-width: 60px; height: auto;'></td>";
          ?>
-         <label for="foto" class="text-gray-800 text-[15px] mb-2 block form-label">Foto Profil</label>
          <input class="form-control" type="file" name="foto" id="foto">
       </div>
 
