@@ -1,9 +1,6 @@
 <?php
    session_start();
 
-   // if(!isset($_SESSION['nim'])) {
-   //    header('location: login');
-   // }
    $title = "Beranda";
    include("includes/header.php");
    include("includes/navigation_bar.php");
@@ -74,7 +71,7 @@
                <div class="relative flex items-center">
                   <textarea name="deskripsi" rows="3"
                      class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600 resize-none"
-                     placeholder="Masukkan nama penyelenggara" required></textarea>
+                     placeholder="Masukkan deskripsi" required></textarea>
                </div>
             </div>
 

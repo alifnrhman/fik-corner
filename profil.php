@@ -34,7 +34,7 @@
       <div class="mb-3">
          <input type="hidden" name="foto" value="<?= $data[0]['foto']; ?>">
          <?php
-             echo "<td><img src='" . $data[0]['foto'] . "' style='max-width: 60px; height: auto;'></td>";
+             echo "<td><img src='" . $data[0]['foto'] . "' style='max-width: 200px; height: auto;'></td>";
          ?>
          <input class="form-control" type="file" name="foto" id="foto">
       </div>

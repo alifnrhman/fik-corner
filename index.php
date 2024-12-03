@@ -1,9 +1,6 @@
 <?php
    session_start();
 
-   // if(!isset($_SESSION['nim'])) {
-   //    header('location: login');
-   // }
    $title = "Beranda";
    include("includes/header.php");
    include("includes/navigation_bar.php");
@@ -12,7 +9,7 @@
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <!-- Kegiatan Terpopuler -->
-   <div class='my-14'>
+   <div class='mt-8'>
       <div>
          <p class="font-bold text-2xl">Kegiatan Terpopuler</p>
       </div>
