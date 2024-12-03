@@ -16,18 +16,18 @@
          <form class="max-w-lg max-md:mx-auto w-full p-6" action="process_login_penyelenggara.php" method="post">
             <div class="mb-8">
                <h3 class="text-gray-800 text-4xl font-extrabold">Login Penyelenggara</h3>
-               <p class="text-gray-800 text-sm mt-6">Masuk ke dashboard penyelenggara FIK Corner menggunakan username
+               <p class="text-gray-800 text-sm mt-6">Masuk ke dashboard penyelenggara FIK Corner menggunakan email
                   dan
                   password anda.
                </p>
             </div>
 
             <div>
-               <label class="text-gray-800 text-[15px] mb-2 block">Username</label>
+               <label class="text-gray-800 text-[15px] mb-2 block">Email</label>
                <div class="relative flex items-center">
-                  <input name="username" type="text" required
+                  <input name="email" type="email" required
                      class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Masukkan username" />
+                     placeholder="Masukkan email" />
                </div>
             </div>
 
