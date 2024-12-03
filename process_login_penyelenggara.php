@@ -2,24 +2,24 @@
 include('connection.php');
 session_start();
 
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-if (!empty($username) && !empty($password)) {
-    // Cek apakah username ada di database
-    $sql = "SELECT * FROM penyelenggara WHERE username = ?";
+if (!empty($email) && !empty($password)) {
+    // Cek apakah email ada di database
+    $sql = "SELECT * FROM penyelenggara WHERE email = ?";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Jika username ada, validasi password
+        // Jika email ada, validasi password
         $data = $result->fetch_assoc();
 
         if ($data['password'] === $password) {
-            // Jika username dan password benar
-            $_SESSION['username'] = $data['username'];
+            // Jika email dan password benar
+            $_SESSION['email'] = $data['email'];
             $_SESSION['nama_penyelenggara'] = $data['nama_penyelenggara'];
             setcookie('message', '', time() - 3600, "/");
             header('location: dashboard_penyelenggara');
@@ -29,13 +29,13 @@ if (!empty($username) && !empty($password)) {
             header('location: penyelenggara');
         }
     } else {
-        // Jika username tidak ditemukan
-        setcookie("message", "Username yang Anda masukkan salah.", time() + 3600, "/");
+        // Jika email tidak ditemukan
+        setcookie("message", "Email yang Anda masukkan salah.", time() + 3600, "/");
         header('location: penyelenggara');
     }
 } else {
-    // Jika username atau password kosong
-    setcookie("message", "Harap isi username dan password.", time() + 3600, "/");
+    // Jika email atau password kosong
+    setcookie("message", "Harap isi email dan password.", time() + 3600, "/");
     header('location: penyelenggara');
 }
 ?>
