@@ -3,7 +3,7 @@
    setcookie("message", "");
 
 	if (isset($_SESSION['username'])) {
-		header("location: dashboard");
+		header("location: dashboard_admin.php");
 	}
 
    $title = "Admin Login";

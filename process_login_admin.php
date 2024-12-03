@@ -22,7 +22,7 @@ if (!empty($username) && !empty($password)) {
             $_SESSION['username'] = $data['username'];
             $_SESSION['nama'] = $data['nama'];
             setcookie('message', '', time() - 3600, "/");
-            header('location: dashboard');
+            header('location: dashboard_admin');
         } else {
             // Jika password salah
             setcookie("message", "Password yang Anda masukkan salah.", time() + 3600, "/");
