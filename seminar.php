@@ -59,7 +59,7 @@
             <div class="relative flex items-center">
                <button type="reset"
                   class="w-full shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none"
-                  onclick="window.location.href='seminar.php'">
+                  onclick="window.location.href='seminar'">
                   <i class="fa-solid fa-rotate-left fa-sm" style="color: #ffffff;"></i>
                   Reset Filter
                </button>
