@@ -38,7 +38,7 @@
                   <option value="gratis" <?= isset($_GET['biaya']) && $_GET['biaya'] === 'gratis' ? 'selected' : '' ?>>
                      Gratis</option>
                   <option value="berbayar"
-                     <?= isset($_GET['biaya']) && $_GET['biaya'] === 'Berbayar' ? 'selected' : '' ?>>Berbayar</option>
+                     <?= isset($_GET['biaya']) && $_GET['biaya'] === 'berbayar' ? 'selected' : '' ?>>Berbayar</option>
                </select>
             </div>
             <div class="relative flex items-center">
@@ -80,9 +80,9 @@
                $where = "status = 'Aktif' AND kategori_kegiatan.kategori = 'Seminar'";
 
                if (isset($_GET['biaya'])) {
-                  if ($_GET['biaya'] === 'Gratis') {
+                  if ($_GET['biaya'] === 'gratis') {
                      $where .= " AND kegiatan.biaya IS NULL";
-                  } else if ($_GET['biaya'] === 'Berbayar') {
+                  } else if ($_GET['biaya'] === 'berbayar') {
                      $where .= " AND kegiatan.biaya IS NOT NULL";
                   } else {
                      $where .= "";
@@ -92,9 +92,9 @@
                $date = date('Y-m-d');
                
                if (isset($_GET['waktu'])) {
-                  if ($_GET['waktu'] === 'Belum dimulai') {
+                  if ($_GET['waktu'] === 'belum dimulai') {
                      $where .= " AND kegiatan.tanggal >= '$date'";
-                  } else if ($_GET['waktu'] === 'Sudah selesai') {
+                  } else if ($_GET['waktu'] === 'sudah selesai') {
                      $where .= " AND kegiatan.tanggal < '$date'";
                   } else {
                      $where .= "";
@@ -104,11 +104,11 @@
                $orderBy = "kegiatan.posted_at DESC";
 
                if (isset($_GET['urutkan'])) {
-                  if ($_GET['urutkan'] === 'Terbaru') {
+                  if ($_GET['urutkan'] === 'terbaru') {
                      $orderBy = "kegiatan.posted_at DESC";
-                  } else if ($_GET['urutkan'] === 'Terlama') {
+                  } else if ($_GET['urutkan'] === 'terlama') {
                      $orderBy = "kegiatan.posted_at ASC";
-                  } else if ($_GET['urutkan'] === 'Terpopuler') {
+                  } else if ($_GET['urutkan'] === 'terpopuler') {
                      $orderBy = "kegiatan.jumlah_peserta DESC";
                   }
                }
