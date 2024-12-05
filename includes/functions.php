@@ -32,10 +32,10 @@ function get_data($connection, $columns = '*', $table, $join = '', $where = '', 
 
     // Mengecek apakah ada hasil
     if ($result->num_rows > 0) {
-        // Menyimpan data dalam bentuk array asosiatif
+        // Menyimpan data dalam bentuk array
         $data = [];
         while ($row = $result->fetch_assoc()) {
-            // Mengubah kolom foto BLOB menjadi base64 (jika ada kolom BLOB bernama foto)
+            // Mengubah format foto BLOB menjadi base64
             if (isset($row['foto']) && !empty($row['foto'])) {
                 $row['foto'] = 'data:image/jpeg;base64,' . base64_encode($row['foto']);
             }
@@ -68,9 +68,9 @@ function format_tanggal($tanggal){
 	);
 	$format = explode('-', $tanggal);
 	
-	// variabel format 0 = tanggal
-	// variabel format 1 = bulan
-	// variabel format 2 = tahun
+	// Variabel format[0] = tanggal
+	// Variabel format[1] = bulan
+	// Variabel format[2] = tahun
  
 	return $format[2] . ' ' . $bulan[ (int)$format[1] ] . ' ' . $format[0];
 }

@@ -19,8 +19,13 @@ if (!empty($nim) && !empty($password)) {
 
         if ($data['password'] === $password) {
             // Jika NIM dan password benar
+            if (isset($data['foto']) && !empty($data['foto'])) {
+                $data['foto'] = 'data:image/jpeg;base64,' . base64_encode($data['foto']);
+            }
+            
             $_SESSION['nim'] = $data['nim'];
             $_SESSION['nama'] = $data['nama_lengkap'];
+            $_SESSION['foto'] = $data['foto'];
             setcookie('message', '', time() - 3600, "/");
             header('location: index');
         } else {

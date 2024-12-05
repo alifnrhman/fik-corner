@@ -91,23 +91,26 @@
       <?php 
          if (isset($_SESSION['nim'])) {
             echo
-            "<div class='flex items-center max-sm:ml-auto space-x-5'>" .
+            "<div class='flex items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
                "<div class=''>" .
                   "<i class='fa-solid fa-bell fa-lg cursor-pointer' style='color: #6b7280'></i>" .
                "</div>" .
                "<div>" .
                   "<ul>" .
-                     "<li class='group relative px-1'>" .
-                        "<div class='py-2'>" .
-                           "<i class='fa-solid fa-circle-user fa-lg cursor-pointer' style='color: #6b7280;'></i>" .
-                           "<span class='ps-3 text-gray-600 font-medium cursor-pointer'>" . $_SESSION['nama'] . "</span>" .
+                     "<li class='group relative px-1 ms-4'>" .
+                     "<div class='flex flex-wrap items-center justify-center gap-4 cursor-pointer'>" ;
+                        if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
+                        echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
+                        } else {
+                        echo "<i class='fa-solid fa-circle-user fa-xl cursor-pointer' style='color: #6b7280;'></i>";
+                        }
+                     echo
+                        "<div>" .
+                           "<p class='text-sm text-gray-800 font-bold'>" . $_SESSION['nama'] . "</p>" .
+                           "<p class='text-xs text-gray-500'>" . $_SESSION['nim'] . "</p>" .
                         "</div>" .
-                        "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[320px] max-sm:min-w-[250px] right-0 top-10 absolute hidden group-hover:block'>" .
-                           "<div class=''>" .
-                           "<h6 class='font-semibold text-[15px]'>" . $_SESSION['nama'] . "</h6>" .
-                           "<p class='text-sm text-gray-500'>" . $_SESSION['nim'] . "</p>" .
-                           "</div>" .
-                           "<hr class='border-b-0 my-4' />" .
+                     "</div>" .
+                        "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[220px] max-sm:min-w-[220px] right-0 top-9 absolute hidden group-hover:block'>" .
                            "<ul class='space-y-1.5'>" .
                               "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
                               "<li><a href='riwayat_kegiatan' class='text-sm text-gray-500 hover:text-primary'>Riwayat Kegiatan</a></li>" .
