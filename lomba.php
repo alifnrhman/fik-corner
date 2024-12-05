@@ -166,11 +166,13 @@
                               "<p class='text-gray-400 text-sm line-clamp-4'>" . $data['nama_penyelenggara'] . "</p>" .
                            "</div>" .
                         "</div>" .
-                     "</div>";
+                     "</div>" . 
+                 "</a>";
                }
             ?>
          </div>
       </div>
    </div>
 </main>
+
 <?php include("includes/footer.php") ?>

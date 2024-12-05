@@ -53,6 +53,11 @@
             <i class="fa-solid fa-sack-dollar absolute"></i>
             <p class="font-semibold ms-6"><?= $data[0]['biaya'] ?></p>
          </div>
+         <div class="flex items-center">
+            <i class='fa-solid fa-user-group fa-sm absolute'></i>
+            <span class="font-semibold ms-6">
+               <?= $data[0]['jumlah_peserta'] ?> peserta</span>
+         </div>
          <div class="mt-6 items-center">
             <p class="font-bold">Deskripsi</p>
             <p class="text-justify"><?= $data[0]['deskripsi_lengkap'] ?></p>

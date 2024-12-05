@@ -33,7 +33,11 @@
             <div class="h-full items-center flex flex-col gap-y-5">
                <div class="w-full rounded-full">
                   <?php
-                  echo "<img src='" . $data[0]['foto'] . "' class='w-60 h-60 rounded-full object-cover mx-auto' />";
+                     if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
+                        echo "<img src='" . $data[0]['foto'] . "' class='w-60 h-60 rounded-full object-cover mx-auto' />";
+                     } else {
+                        echo "<i class='fa-solid fa-circle-user fa-xl w-60 h-60 rounded-full object-cover mx-auto' style='color: #6b7280;'></i>";
+                     }
                   ?>
                </div>
                <input class="form-control" type="file" name="foto" id="foto">

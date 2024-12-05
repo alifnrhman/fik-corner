@@ -30,6 +30,8 @@
                  
                foreach ($news as $data) {
                $data['tanggal'] = format_tanggal($data['tanggal']);
+               $url_berita = "detail_berita.php?id=" . $data['id_berita'];
+
                echo
                   "<div class='flex items-start gap-4 border rounded-lg p-4 mb-6 shadow-sm space-y-6 w-full'>" .
                      "<div class=''>" .
@@ -43,7 +45,7 @@
                            "<h2 class='text-gray-800 text-xl font-bold mb-4'>" . $data['judul_berita'] . "</h2>" . 
                            "<p class='text-gray-400 text-sm line-clamp-4 text-justify'>" . $data['deskripsi'] . "</p>" . 
                         "<div class='mt-2'>" . 
-                           "<a href='#' class='text-primary text-sm font-medium hover:underline'>Read more...</a>" . 
+                           "<a href='$url_berita' class='text-primary text-sm font-medium hover:underline'>Read more...</a>" . 
                         "</div>" . 
                      "</div>" . 
                   "</div>";
