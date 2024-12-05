@@ -1,9 +1,6 @@
 <?php
    session_start();
 
-   $title = "Seminar";
-   include("includes/header.php");
-   include("includes/navigation_bar.php");
    include("includes/functions.php");
 
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
@@ -24,6 +21,10 @@
    } else {
       $data[0]['biaya'] = "Rp" . number_format($data[0]['biaya'], 2, ',', '.');
    }
+
+   $title = $data[0]['nama_kegiatan'];
+   include("includes/header.php");
+   include("includes/navigation_bar.php");
 ?>
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
@@ -33,7 +34,7 @@
    </div>
    <div class="container flex">
       <div class="mr-10">
-         <img src="<?= $data[0]['foto'] ?>" alt="<?= $data[0]['nama_kegiatan'] ?>" class="">
+         <img src="<?= $data[0]['foto'] ?>" alt="<?= $data[0]['nama_kegiatan'] ?>" class="h-30">
       </div>
       <div>
          <div class="">

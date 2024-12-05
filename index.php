@@ -36,7 +36,7 @@
                   $url_kegiatan = "detail_kegiatan.php?id=" . $data['id_kegiatan'];
                   
                   echo
-                     "<a href='" . $url_kegiatan . "'>" . 
+                  "<a href='" . $url_kegiatan . "'>" . 
                      "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
                         "<div class='w-full h-60 object-cover bg-gradient-to-b from-gray-800 via-transparent to-transparent absolute' /></div>" .
                         "<div class='ms-6 mt-5 absolute'>" .
@@ -79,7 +79,7 @@
                            "</div>" .
                         "</div>" .
                      "</div>";
-                     "</a>";
+                  "</a>";
                }
             ?>
          </div>
