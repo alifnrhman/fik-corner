@@ -100,9 +100,9 @@
                      "<li class='group relative px-1 ms-4'>" .
                      "<div class='flex flex-wrap items-center justify-center gap-4 cursor-pointer'>" ;
                         if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
-                        echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
+                           echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
                         } else {
-                        echo "<i class='fa-solid fa-circle-user fa-xl cursor-pointer' style='color: #6b7280;'></i>";
+                           echo "<img src='assets\default_pfp.svg' class='w-8 h-8 rounded-full object-cover' />";
                         }
                      echo
                         "<div>" .

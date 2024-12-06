@@ -4,6 +4,6 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title><?= $title; ?></title>
-   <link href="assets/output.css" rel="stylesheet">
+   <link href="css/output.css" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col">

@@ -10,10 +10,10 @@
    include("includes/navigation_bar.php");
    include("includes/functions.php");
 
-   $columns = "*";
+   $columns = "users.*, mahasiswa.tanggal_lahir, mahasiswa.jenis_kelamin, mahasiswa.prodi, mahasiswa.email";
    $table = "users";
-   $join = "";
-   $where ="";
+   $join = "LEFT JOIN mahasiswa ON users.nim = mahasiswa.nim";
+   $where ="users.nim = '" . $_SESSION['nim'] . "'";
    $orderBy ="";
    $limit = "";
                
@@ -36,7 +36,7 @@
                      if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
                         echo "<img src='" . $data[0]['foto'] . "' class='w-60 h-60 rounded-full object-cover mx-auto' />";
                      } else {
-                        echo "<i class='fa-solid fa-circle-user fa-xl w-60 h-60 rounded-full object-cover mx-auto' style='color: #6b7280;'></i>";
+                        echo "<img src='assets\default_pfp.svg' class='w-60 h-60 rounded-full object-cover mx-auto' />";
                      }
                   ?>
                </div>
@@ -47,29 +47,30 @@
          <div class="container">
             <div class="mb-4">
                <label class="text-gray-800 text-[15px] mb-1 block font-semibold">Nama Lengkap</label>
-               <div class="relative flex items-center">
-                  <input name="nama" type="text" value="<?= $_SESSION['nama'] ?>" disabled
-                     class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Nomor Handphone" />
-               </div>
+               <input name="nama" type="text" value="<?= $_SESSION['nama'] ?>" disabled
+                  class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                  placeholder="Nama Lengkap" />
             </div>
 
             <div class="mb-4">
                <label class="text-gray-800 text-[15px] mb-1 block font-semibold">NIM</label>
-               <div class="relative flex items-center">
-                  <input name="nim" type="text" value="<?= $data[0]['nim']; ?>" disabled
-                     class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Nomor Handphone" />
-               </div>
+               <input name="nim" type="text" value="<?= $data[0]['nim']; ?>" disabled
+                  class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                  placeholder="NIM" />
+            </div>
+
+            <div class="mb-4">
+               <label class="text-gray-800 text-[15px] mb-1 block font-semibold">Email</label>
+               <input name="email" type="email" value="<?= $data[0]['email']; ?>" disabled
+                  class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                  placeholder="Email" />
             </div>
 
             <div class="mb-4">
                <label class="text-gray-800 text-[15px] mb-1 block font-semibold">Nomor Handphone</label>
-               <div class="relative flex items-center">
-                  <input name="nomor_telepon" type="text" value="<?= $data[0]['nomor_telepon']; ?>" disabled
-                     class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Nomor Handphone" />
-               </div>
+               <input name="nomor_telepon" type="text" value="<?= $data[0]['nomor_telepon']; ?>" disabled
+                  class="w-1/2 text-sm text-gray-600 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                  placeholder="Nomor Handphone" />
             </div>
 
             <button data-collapse-target="collapse"
@@ -81,8 +82,7 @@
 
             <div data-collapse="collapse"
                class="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out">
-               <div
-                  class="relative mx-auto flex w-8/12 flex-col rounded-lg bg-white border border-slate-200 shadow-sm mt-4">
+               <div class="relative flex w-6/12 flex-col rounded-lg bg-white border border-slate-200 shadow-sm mt-4">
                   <div class="p-4">
                      <div>
                         <p class="font-semibold text-m" style="color:red;">Tidak perlu diisi jika anda tidak ingin
@@ -114,7 +114,7 @@
 
             <div class="mt-8">
                <button type="submit"
-                  class="w-2/3 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none">
+                  class="w-1/2 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none">
                   Ubah Data Profil
                </button>
             </div>

@@ -42,76 +42,61 @@
             <div class="flex flex-row gap-4">
                <div class="basis-3/5">
                   <label class="text-gray-800 text-[15px] mb-2 block">Nama Penyelenggara</label>
-                  <div class="relative flex items-center">
-                     <input name="nama_penyelenggara" type="text" required
-                        class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                        placeholder="Masukkan nama penyelenggara" />
-                  </div>
+                  <input name="nama_penyelenggara" type="text" required
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     placeholder="Masukkan nama penyelenggara" />
                </div>
 
                <div class="">
                   <label class="text-gray-800 text-[15px] mb-2 block">Jenis Penyelenggara</label>
-                  <div class="relative flex items-center">
-                     <select name="jenis_penyelenggara"
-                        class="w-full text-sm text-gray-800 bg-gray-100 px-4 py-3.5 rounded-md outline-blue-600"
-                        required>
-                        <option value="" selected disabled>-- Pilih Jenis Penyelenggara --</option>
-                        <option value="Organisasi Kemahasiswaan">Organisasi Kemahasiswaan</option>
-                        <option value="Himpunan Mahasiswa">Himpunan Mahasiswa</option>
-                        <option value="Unit Kegiatan Mahasiswa (UKM)">Unit Kegiatan Mahasiswa (UKM)</option>
-                        <option value="Perusahaan atau Organisasi Non-Kemahasiswaan">Perusahaan atau Organisasi
-                           Non-Kemahasiswaan</option>
-                     </select>
-                  </div>
+                  <select name="jenis_penyelenggara"
+                     class="w-full text-sm text-gray-800 bg-gray-100 px-4 py-3.5 rounded-md outline-blue-600" required>
+                     <option value="" selected disabled>-- Pilih Jenis Penyelenggara --</option>
+                     <option value="Organisasi Kemahasiswaan">Organisasi Kemahasiswaan</option>
+                     <option value="Himpunan Mahasiswa">Himpunan Mahasiswa</option>
+                     <option value="Unit Kegiatan Mahasiswa (UKM)">Unit Kegiatan Mahasiswa (UKM)</option>
+                     <option value="Perusahaan atau Organisasi Non-Kemahasiswaan">Perusahaan atau Organisasi
+                        Non-Kemahasiswaan</option>
+                  </select>
                </div>
             </div>
 
             <div class="mt-4">
                <label class="text-gray-800 text-[15px] mb-2 block">Deskripsi</label>
-               <div class="relative flex items-center">
-                  <textarea name="deskripsi" rows="3"
-                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600 resize-none"
-                     placeholder="Masukkan deskripsi" required></textarea>
-               </div>
+               <textarea name="deskripsi" rows="3"
+                  class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600 resize-none"
+                  placeholder="Masukkan deskripsi" required></textarea>
             </div>
 
             <div class="flex flex-row gap-4">
                <div class="mt-4 basis-7/12">
                   <label class="text-gray-800 text-[15px] mb-2 block">Nama Penanggung Jawab</label>
-                  <div class="relative flex items-center">
-                     <input name="nama_penanggung_jawab" id="nama_penanggung_jawab" type="text" required
-                        class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                        placeholder="Masukkan nama penanggung jawab" />
-                  </div>
+                  <input name="nama_penanggung_jawab" id="nama_penanggung_jawab" type="text" required
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     placeholder="Masukkan nama penanggung jawab" />
                </div>
 
                <div class="mt-4 basis-5/12">
                   <label class="text-gray-800 text-[15px] mb-2 block">Nomor Telepon</label>
-                  <div class="relative flex items-center">
-                     <input name="nomor_telepon" id="nomor_telepon" type="text" required
-                        class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                        placeholder="Contoh: 081234567890" />
-                  </div>
+                  <input name="nomor_telepon" id="nomor_telepon" type="text" required
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     placeholder="Contoh: 081234567890" />
                </div>
             </div>
 
             <div class="flex flex-row gap-4">
                <div class="basis-6/12 mt-4">
                   <label class="text-gray-800 text-[15px] mb-2 block">Email</label>
-                  <div class="relative flex items-center">
-                     <input name="email" id="email" type="email" required
-                        class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                        placeholder="Masukkan email" />
-                  </div>
+                  <input name="email" id="email" type="email" required
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     placeholder="Masukkan email" />
                </div>
 
                <div class="mt-4 basis-6/12">
                   <label class="text-gray-800 text-[15px] mb-2 block">Password</label>
-                  <div class="relative flex items-center">
-                     <input name="password" id="password" type="password" required
-                        class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                        placeholder="Masukkan password" />
-                  </div>
+                  <input name="password" id="password" type="password" required
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     placeholder="Masukkan password" />
                </div>
             </div>
 
