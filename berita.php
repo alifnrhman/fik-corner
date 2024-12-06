@@ -30,6 +30,7 @@
                  
                foreach ($news as $data) {
                $data['tanggal'] = format_tanggal($data['tanggal']);
+
                $url_berita = "detail_berita.php?id=" . $data['id_berita'];
 
                echo
