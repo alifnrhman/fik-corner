@@ -121,7 +121,10 @@
                foreach($events as $data) {
                   $data['tanggal'] = format_tanggal($data['tanggal']);
                   $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
+                  $url_kegiatan = "detail_kegiatan.php?id=" . $data['id_kegiatan'];
+
                   echo
+                  "<a href='" . $url_kegiatan . "'>" . 
                      "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
                         "<div class='w-full h-60 object-cover bg-gradient-to-b from-gray-800 via-transparent to-transparent absolute' /></div>" .
                         "<div class='ms-6 mt-5 absolute'>" .
@@ -163,11 +166,13 @@
                               "<p class='text-gray-400 text-sm line-clamp-4'>" . $data['nama_penyelenggara'] . "</p>" .
                            "</div>" .
                         "</div>" .
-                     "</div>";
+                     "</div>" . 
+                 "</a>";
                }
             ?>
          </div>
       </div>
    </div>
 </main>
+
 <?php include("includes/footer.php") ?>
