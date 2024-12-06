@@ -1,0 +1,31 @@
+.social-icons {
+    display: flex;
+    /* Membuat item di dalamnya sejajar ke samping */
+    list-style: none;
+    /* Menghilangkan bullet pada list */
+    padding: 0;
+    margin: 20px;
+    justify-content: left;
+    /* Untuk memusatkan ikon secara horizontal */
+}
+
+.social-icons li {
+    margin: 0 10px;
+    /* Memberikan jarak horizontal antar-ikon */
+}
+
+.social-icons a {
+    font-size: 24px;
+    /* Ukuran ikon */
+    color: #555;
+    /* Warna ikon */
+    text-decoration: none;
+    /* Menghilangkan garis bawah pada link */
+    transition: color 0.3s;
+    /* Animasi perubahan warna */
+}
+
+.social-icons a:hover {
+    color: #ff6500;
+    /* Warna saat ikon di-hover */
+}
