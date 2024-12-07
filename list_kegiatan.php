@@ -142,7 +142,7 @@
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
                            <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
-                           <img src="https://readymadeui.com/team-1.webp" alt="profile-pic"
+                           <img src="assets\default_pfp.svg" alt="profile-pic"
                               class="w-[38px] h-[38px] rounded-full border-2 border-gray-300 cursor-pointer" />
                         </div>
 
