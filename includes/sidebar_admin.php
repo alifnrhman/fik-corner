@@ -10,7 +10,7 @@
          <ul class="space-y-2">
             <li>
                <a href="dashboard_admin"
-                  class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                  class="menu-item text-gray-800 text-sm flex items-center cursor-pointer  hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                      viewBox="0 0 24 24">
                      <path
