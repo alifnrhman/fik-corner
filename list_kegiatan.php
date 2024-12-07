@@ -5,7 +5,7 @@
       header('location: admin');
    }
    
-   $title = "Admin Dashboard";
+   $title = "List Kegiatan";
    include("includes/header.php");
 ?>
 
@@ -24,7 +24,7 @@
                <ul class="space-y-2">
                   <li>
                      <a href="dashboard_admin"
-                        class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 24 24">
                            <path
@@ -39,7 +39,7 @@
                   </li>
                   <li>
                      <a href="list_kegiatan"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                        class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 60.123 60.123">
                            <path
@@ -126,14 +126,14 @@
                      <div class='flex items-center space-x-6'>
                         <div
                            class="w-9 h-[38px] flex items-center justify-center rounded-xl relative bg-blue-200 cursor-pointer">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] fill-blue-600"
-                              viewBox="0 0 371.263 371.263">
-                              <path
-                                 d="M305.402 234.794v-70.54c0-52.396-33.533-98.085-79.702-115.151.539-2.695.838-5.449.838-8.204C226.539 18.324 208.215 0 185.64 0s-40.899 18.324-40.899 40.899c0 2.695.299 5.389.778 7.964-15.868 5.629-30.539 14.551-43.054 26.647-23.593 22.755-36.587 53.354-36.587 86.169v73.115c0 2.575-2.096 4.731-4.731 4.731-22.096 0-40.959 16.647-42.995 37.845-1.138 11.797 2.755 23.533 10.719 32.276 7.904 8.683 19.222 13.713 31.018 13.713h72.217c2.994 26.887 25.869 47.905 53.534 47.905s50.54-21.018 53.534-47.905h72.217c11.797 0 23.114-5.03 31.018-13.713 7.904-8.743 11.797-20.479 10.719-32.276-2.036-21.198-20.958-37.845-42.995-37.845a4.704 4.704 0 0 1-4.731-4.731zM185.64 23.952c9.341 0 16.946 7.605 16.946 16.946 0 .778-.12 1.497-.24 2.275-4.072-.599-8.204-1.018-12.336-1.138-7.126-.24-14.132.24-21.078 1.198-.12-.778-.24-1.497-.24-2.275.002-9.401 7.607-17.006 16.948-17.006zm0 323.358c-14.431 0-26.527-10.3-29.342-23.952h58.683c-2.813 13.653-14.909 23.952-29.341 23.952zm143.655-67.665c.479 5.15-1.138 10.12-4.551 13.892-3.533 3.773-8.204 5.868-13.353 5.868H59.89c-5.15 0-9.82-2.096-13.294-5.868-3.473-3.772-5.09-8.743-4.611-13.892.838-9.042 9.282-16.168 19.162-16.168 15.809 0 28.683-12.874 28.683-28.683v-73.115c0-26.228 10.419-50.719 29.282-68.923 18.024-17.425 41.498-26.887 66.528-26.887 1.198 0 2.335 0 3.533.06 50.839 1.796 92.277 45.929 92.277 98.325v70.54c0 15.809 12.874 28.683 28.683 28.683 9.88 0 18.264 7.126 19.162 16.168z"
-                                 data-original="#000000" />
-                           </svg>
-                           <span
-                              class="absolute w-5 h-5 flex items-center justify-center -right-2.5 -top-2.5 text-[10px] rounded-full bg-blue-600 text-white">21</span>
+                               <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] fill-blue-600"
+                               viewBox="0 0 371.263 371.263">
+                               <path
+                               d="M305.402 234.794v-70.54c0-52.396-33.533-98.085-79.702-115.151.539-2.695.838-5.449.838-8.204C226.539 18.324 208.215 0 185.64 0s-40.899 18.324-40.899 40.899c0 2.695.299 5.389.778 7.964-15.868 5.629-30.539 14.551-43.054 26.647-23.593 22.755-36.587 53.354-36.587 86.169v73.115c0 2.575-2.096 4.731-4.731 4.731-22.096 0-40.959 16.647-42.995 37.845-1.138 11.797 2.755 23.533 10.719 32.276 7.904 8.683 19.222 13.713 31.018 13.713h72.217c2.994 26.887 25.869 47.905 53.534 47.905s50.54-21.018 53.534-47.905h72.217c11.797 0 23.114-5.03 31.018-13.713 7.904-8.743 11.797-20.479 10.719-32.276-2.036-21.198-20.958-37.845-42.995-37.845a4.704 4.704 0 0 1-4.731-4.731zM185.64 23.952c9.341 0 16.946 7.605 16.946 16.946 0 .778-.12 1.497-.24 2.275-4.072-.599-8.204-1.018-12.336-1.138-7.126-.24-14.132.24-21.078 1.198-.12-.778-.24-1.497-.24-2.275.002-9.401 7.607-17.006 16.948-17.006zm0 323.358c-14.431 0-26.527-10.3-29.342-23.952h58.683c-2.813 13.653-14.909 23.952-29.341 23.952zm143.655-67.665c.479 5.15-1.138 10.12-4.551 13.892-3.533 3.773-8.204 5.868-13.353 5.868H59.89c-5.15 0-9.82-2.096-13.294-5.868-3.473-3.772-5.09-8.743-4.611-13.892.838-9.042 9.282-16.168 19.162-16.168 15.809 0 28.683-12.874 28.683-28.683v-73.115c0-26.228 10.419-50.719 29.282-68.923 18.024-17.425 41.498-26.887 66.528-26.887 1.198 0 2.335 0 3.533.06 50.839 1.796 92.277 45.929 92.277 98.325v70.54c0 15.809 12.874 28.683 28.683 28.683 9.88 0 18.264 7.126 19.162 16.168z"
+                               data-original="#000000" />
+                            </svg>
+                            <span
+                            class="absolute w-5 h-5 flex items-center justify-center -right-2.5 -top-2.5 text-[10px] rounded-full bg-blue-600 text-white">21</span>
                         </div>
                      </div>
 
@@ -215,6 +215,176 @@
             </div>
          </header>
 
+         <div class="my-10 px-2">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+               </div>
+            </div>
+         </div>
       </section>
    </div>
 </div>
