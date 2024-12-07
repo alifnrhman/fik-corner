@@ -101,3 +101,24 @@ document.addEventListener("DOMContentLoaded", function () {
       });
    });
 });
+
+// Admin Sidebar
+document.addEventListener("DOMContentLoaded", () => {
+   const currentPath = window.location.pathname;
+   const menuItems = document.querySelectorAll(".menu-item");
+
+   menuItems.forEach((item) => {
+      const href = item.getAttribute("href");
+      if (currentPath.includes(href)) {
+         item.classList.remove("text-gray-800");
+         item.classList.add("text-primary");
+         item.classList.add("font-semibold");
+         item.classList.add("bg-secondary");
+      } else {
+         item.classList.add("text-gray-800");
+         item.classList.remove("text-primary");
+         item.classList.remove("font-semibold");
+         item.classList.remove("bg-secondary");
+      }
+   });
+});

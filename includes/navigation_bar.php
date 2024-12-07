@@ -71,9 +71,9 @@
          </svg>
       </button>
 
-      <div class='flex ml-auto mr-20 max-lg:w-full'>
+      <div class='flex ml-auto max-lg:w-full'>
          <form action='search.php' method='post'
-            class='flex xl:w-[30rem] max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
+            class='flex  bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
             <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...'
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class=" fill-gray-400">
@@ -82,39 +82,40 @@
                </path>
             </svg>
          </form>
-      </div>
 
-      <?php 
+         <?php 
          if (isset($_SESSION['nim'])) {
             echo
             "<div class='flex items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
                "<div>" .
                   "<ul>" .
                      "<li class='group relative px-1 ms-4'>" .
-                     "<div class='flex flex-wrap items-center justify-center gap-4 cursor-pointer'>" ;
-                        if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
-                           echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
-                        } else {
-                           echo "<img src='assets\default_pfp.svg' class='w-8 h-8 rounded-full object-cover' />";
-                        }
-                     echo
-                        "<div>" .
-                           "<p class='text-sm text-gray-800 font-bold'>" . $_SESSION['nama'] . "</p>" .
-                           "<p class='text-xs text-gray-500'>" . $_SESSION['nim'] . "</p>" .
-                        "</div>" .
-                     "</div>" .
-                        "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[220px] max-sm:min-w-[220px] right-0 top-9 absolute hidden group-hover:block'>" .
-                           "<ul class='space-y-1.5'>" .
-                              "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
-                              "<li><a href='kegiatan_saya' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Saya</a></li>" .
-                           "</ul>" .
-                           "<hr class='border-b-0 my-4' />" .
-                           "<ul class='space-y-1.5'>" .
-                              "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
-                              <i class='fa-solid fa-arrow-right-from-bracket'></i>
-                              Keluar</a>
-                              </li>" .
-                           "</ul>" .
+                        "<div class='flex flex-wrap items-center justify-center gap-4 cursor-pointer'>" ;
+                           if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
+                              echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
+                           } else {
+                              echo "<img src='assets\default_pfp.svg' class='w-8 h-8 rounded-full object-cover' />";
+                           }
+                        echo
+                           "<div>" .
+                              "<p class='text-sm text-gray-800 font-bold'>" . $_SESSION['nama'] . "</p>" .
+                              "<p class='text-xs text-gray-500'>" . $_SESSION['nim'] . "</p>" .
+                           "</div>" .
+                           "</div>" .
+                              "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[220px] max-sm:min-w-[220px] right-0 top-9 absolute hidden group-hover:block'>" .
+                                 "<ul class='space-y-1.5'>" .
+                                    "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
+                                    "<li><a href='kegiatan_saya' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Saya</a></li>" .
+                                 "</ul>" .
+                                 "<hr class='border-b-0 my-4' />" .
+                                 "<ul class='space-y-1.5'>" .
+                                    "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
+                                    <i class='fa-solid fa-arrow-right-from-bracket'></i>
+                                    Keluar</a>
+                                    </li>" .
+                                 "</ul>" .
+                              "</div>" .
+                           "</div>" .
                         "</div>" .
                      "</li>" .
                   "</ul>" .
@@ -122,7 +123,7 @@
             "</div>" ;
 
          } else {
-            echo "<div class='flex items-center max-lg:ml-auto space-x-6'>"
+            echo "<div class='flex items-center ml-4'>"
             . "<button
                class='px-4 py-2 text-[15px] rounded font-semibold text-primary border-2 border-primary hover:bg-primary transition-all ease-in-out duration-300 bg-transparent hover:text-white'>
                <a href='login'>Masuk</a>
@@ -130,5 +131,7 @@
             . "</div>";
          }
       ?>
+      </div>
    </div>
+
 </header>

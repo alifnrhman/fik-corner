@@ -9,9 +9,10 @@
    include("includes/header.php");
 ?>
 
-<?php include("includes/sidebar_admin.php"); ?>
+
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
    <div class="flex items-start">
+      <?php include("includes/sidebar_admin.php"); ?>
 
       <section class="main-content w-full px-8">
          <header class='z-50 bg-[#f7f6f9] sticky top-0 pt-8'>

@@ -7,16 +7,16 @@
    include("includes/functions.php");
 ?>
 
-<main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
+<main
+   class="w-full h-full pt-40 sm:pt-38 md:pt-40 lg:pt-40 xl:pt-36 2xl:pt-24 px-14 sm:px-14 md:px-14 lg:px-28 flex-grow">
    <!-- Kegiatan Terpopuler -->
-   <div class='mt-8'>
-      <div>
-         <p class="font-bold text-2xl">Kegiatan Terpopuler</p>
-      </div>
-      <div class='max-w-auto'>
-         <div
-            class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
-            <?php 
+   <div>
+      <p class="font-bold text-2xl">Kegiatan Terpopuler</p>
+   </div>
+   <div class='max-w-auto'>
+      <div
+         class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
+         <?php 
                $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "
@@ -82,8 +82,8 @@
                   "</a>";
                }
             ?>
-         </div>
       </div>
+   </div>
    </div>
    <!-- End of Kegiatan Terpopuler -->
 
@@ -327,10 +327,7 @@
             ?>
          </div>
       </div>
+      <!-- End of Lomba Terbaru -->
    </div>
-   <!-- End of Lomba Terbaru -->
-
-
-
 </main>
 <?php include("includes/footer.php") ?>

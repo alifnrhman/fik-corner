@@ -8,8 +8,9 @@
 
 ?>
 
-<main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
-   <div class="mt-8 mb-5 flex items-center">
+<main
+   class="w-full h-full pt-40 sm:pt-38 md:pt-40 lg:pt-40 xl:pt-36 2xl:pt-24 px-14 sm:px-14 md:px-14 lg:px-28 flex-grow">
+   <div>
       <p class="font-bold text-2xl">Berita Terbaru</p>
    </div>
    <div class='max-w-auto'>
@@ -23,7 +24,6 @@
                $where = "";
                $orderBy = "";
                $limit = "";
-                        
 
                // Mengambil data
                $news = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
