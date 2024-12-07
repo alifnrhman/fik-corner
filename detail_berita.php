@@ -14,9 +14,9 @@ if (isset($_GET['id'])) {
     $id_berita = mysqli_real_escape_string($connection, $id_berita);
 
     // Query data berita beserta penyelenggara berdasarkan id
-    $columns = "berita.*, penyelenggara.nama_penyelenggara, penyelenggara.logo";
+    $columns = "*";
     $table = "berita";
-    $join = "LEFT JOIN penyelenggara ON berita.id_penyelenggara = penyelenggara.id_penyelenggara";
+    $join = "";
     $where = "berita.id_berita = '$id_berita'";
     $news = get_data($connection, $columns, $table, $join, $where, "", "1");
 
@@ -34,14 +34,18 @@ if (isset($_GET['id'])) {
 ?>
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-   <div class="container mx-auto">
+   <div class="mt-8 mb-5 flex items-center gap-x-3">
+      <a href='berita'>
+         <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
+      </a>
+      <h1 class="font-bold text-xl">Kembali</h1>
+   </div>
+   <div class='max-w-auto'>
       <!-- Gambar Berita -->
       <div class="mb-8 flex justify-center">
-         <img src="<?= $news['foto'] ?>" alt="<?= $news['judul_berita'] ?>"
-            class="w-1/2 h-auto max-h-96 rounded-md shadow-lg">
+         <div class="w-full rounded-full">
+            <img src="<?= $news['foto'] ?>" alt="<?= $news['judul_berita'] ?>" class="w-80 h-80 object-cover mx-auto">
+         </div>
       </div>
 
       <!-- Detail Berita -->
@@ -57,8 +61,6 @@ if (isset($_GET['id'])) {
                <?= format_tanggal($news['tanggal']) ?>
             </p>
          </div>
-
-         <!-- Penyelenggara -->
 
 
          <!-- Deskripsi -->
