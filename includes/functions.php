@@ -4,30 +4,24 @@ include("connection.php");
 
 // Fungsi untuk mengambil data dari database
 function get_data($connection, $columns = '*', $table, $join = '', $where = '', $orderBy = '', $limit = '') {
-    // Membangun query dasar
     $query = "SELECT $columns FROM $table";
 
-    // Menambahkan klausa JOIN jika diberikan
     if (!empty($join)) {
         $query .= " $join";
     }
 
-    // Menambahkan kondisi WHERE jika diberikan
     if (!empty($where)) {
         $query .= " WHERE $where";
     }
 
-    // Menambahkan kondisi ORDER BY jika diberikan
     if (!empty($orderBy)) {
         $query .= " ORDER BY $orderBy";
     }
 
-    // Menambahkan LIMIT jika diberikan
     if (!empty($limit)) {
         $query .= " LIMIT $limit";
     }
 
-    // Menjalankan query
     $result = $connection->query($query);
 
     // Mengecek apakah ada hasil
@@ -44,13 +38,13 @@ function get_data($connection, $columns = '*', $table, $join = '', $where = '', 
             }
             $data[] = $row;
         }
-        return $data;  // Mengembalikan data
+        return $data;
     } else {
         return [];  // Tidak ada data, kembalikan array kosong
     }
 }
 
-
+// Fungsi untuk format tanggal menjadi penanggalan Indonesia
 function format_tanggal($tanggal){
 	$bulan = array (
 		1 =>   'Januari',
