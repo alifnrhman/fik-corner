@@ -74,7 +74,7 @@
       <div class='flex ml-auto mr-20 max-lg:w-full'>
          <form action='search.php' method='post'
             class='flex xl:w-[30rem] max-xl:w-full bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
-            <input type='text' name="search" placeholder='Cari seminar, webinar, atau lomba...'
+            <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...'
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class=" fill-gray-400">
                <path
@@ -83,17 +83,11 @@
             </svg>
          </form>
       </div>
-      <div class="">
-         <i class="fa-solid fa-moon fa-lg cursor-pointer" style='color: #6b7280'></i>
-      </div>
 
       <?php 
          if (isset($_SESSION['nim'])) {
             echo
             "<div class='flex items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
-               "<div class=''>" .
-                  "<i class='fa-solid fa-bell fa-lg cursor-pointer' style='color: #6b7280'></i>" .
-               "</div>" .
                "<div>" .
                   "<ul>" .
                      "<li class='group relative px-1 ms-4'>" .

@@ -110,14 +110,14 @@
             <div
                class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-3 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
                <?php 
-               $columns = "mhs_riwayat_kegiatan.*, kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
+               $columns = "mhs_kegiatan.*, kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "
-                  LEFT JOIN mhs_riwayat_kegiatan ON kegiatan.id_kegiatan = mhs_riwayat_kegiatan.id_kegiatan 
+                  LEFT JOIN mhs_kegiatan ON kegiatan.id_kegiatan = mhs_kegiatan.id_kegiatan 
                   LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori 
                   LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara
                ";
-               $where = "mhs_riwayat_kegiatan.nim = '" . $_SESSION['nim'] . "'";
+               $where = "mhs_kegiatan.nim = '" . $_SESSION['nim'] . "'";
                $orderBy = "";
                $limit = "";
 
@@ -184,14 +184,14 @@
             <div
                class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-3 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
                <?php 
-               $columns = "mhs_kegiatan.*, kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
+               $columns = "mhs_riwayat_kegiatan.*, kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "
-                  LEFT JOIN mhs_kegiatan ON kegiatan.id_kegiatan = mhs_kegiatan.id_kegiatan 
+                  LEFT JOIN mhs_riwayat_kegiatan ON kegiatan.id_kegiatan = mhs_riwayat_kegiatan.id_kegiatan 
                   LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori 
                   LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara
                ";
-               $where = "mhs_kegiatan.nim = '" . $_SESSION['nim'] . "'" . "AND status = 'Selesai'";
+               $where = "mhs_riwayat_kegiatan.nim = '" . $_SESSION['nim'] . "'";
                $orderBy = "";
                $limit = "";
 

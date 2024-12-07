@@ -9,13 +9,13 @@
    // Get the search query
    $search_query = $_POST['search'] ?? '';
 
-   $where = "status = 'Aktif'";
+   $where = "(status = 'Aktif' OR status = 'Selesai')";
 
    // Add search condition if query exists
    if (!empty($search_query)) {
       $where .= " AND (kegiatan.nama_kegiatan LIKE '%$search_query%' 
-                        OR kategori_kegiatan.kategori LIKE '%$search_query%' 
-                        OR penyelenggara.nama_penyelenggara LIKE '%$search_query%')";
+                  OR kategori_kegiatan.kategori LIKE '%$search_query%' 
+                  OR penyelenggara.nama_penyelenggara LIKE '%$search_query%')";
    }
 
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
@@ -38,7 +38,7 @@
 
    <div class='mt-8'>
       <div class="mb-5">
-         <p class="font-bold text-2xl">Hasil Pencarian untuk "<?= $search_query ?>"</p>
+         <p class="font-bold text-2xl">Hasil pencarian untuk "<?= $search_query ?>"</p>
       </div>
       <div class='max-w-auto'>
          <div
