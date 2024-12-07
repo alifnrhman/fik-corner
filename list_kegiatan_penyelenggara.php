@@ -1,11 +1,11 @@
 <?php
    session_start();
 
-   if(!isset($_SESSION['username'])) {
-      header('location: admin');
+   if(!isset($_SESSION['nama_penyelenggara'])) {
+      header('location: login_penyelenggara');
    }
    
-   $title = "Admin Dashboard";
+   $title = "Dashboard Penyelenggara";
    include("includes/header.php");
 ?>
 
@@ -23,8 +23,8 @@
             <div class="py-6 px-6">
                <ul class="space-y-2">
                   <li>
-                     <a href="dashboard_admin"
-                        class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                     <a href="dashboard_penyelenggara"
+                        class="menu-item text-grey-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 24 24">
                            <path
@@ -38,8 +38,8 @@
                      </a>
                   </li>
                   <li>
-                     <a href="list_kegiatan"
-                        class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                     <a href="list_kegiatan_penyelenggara"
+                        class="menu-item text-primary font-semibold text-sm flex items-center cursor-pointer bg-secondary hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 60.123 60.123">
                            <path
@@ -53,7 +53,7 @@
                      </a>
                   </li>
                   <li>
-                     <a href="approval_admin"
+                     <a href="approval_penyelenggara"
                         class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 64 64">
@@ -68,7 +68,7 @@
                      </a>
                   </li>
                   <li>
-                     <a href="review_admin"
+                     <a href="kegiatan_ditolak"
                         class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                            viewBox="0 0 682.667 682.667">
@@ -88,7 +88,7 @@
                                  data-original="#000000" />
                            </g>
                         </svg>
-                        <span>Reviews</span>
+                        <span>Tidak Disetujui</span>
                      </a>
                   </li>
                </ul>
@@ -112,7 +112,7 @@
                <div class='flex items-center gap-y-6 max-sm:flex-col z-50 w-full pb-2'>
                   <div
                      class='flex items-center gap-4 w-full px-6 bg-white shadow-sm min-h-[48px] sm:mr-20 rounded-md outline-none border-none'>
-                    <form action="dashboard_admin" method="get"> <input type='text' placeholder='Search something...'
+                    <form action="dashboard_penyelenggara" method="get"> <input type='text' placeholder='Search something...'
                         class='w-full text-sm bg-transparent rounded outline-none' /></form>
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904"
                         class="w-4 cursor-pointer fill-gray-400 ml-auto">
@@ -141,7 +141,7 @@
                      </div>
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
-                           <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
+                           <p class="text-gray-500 text-sm"><?= $_SESSION['nama_penyelenggara']; ?></p>
                            <img src="https://readymadeui.com/team-1.webp" alt="profile-pic"
                               class="w-[38px] h-[38px] rounded-full border-2 border-gray-300 cursor-pointer" />
                         </div>
@@ -160,7 +160,7 @@
                                  Account</a>
                               <hr class="my-2 -mx-2" />
 
-                              <a href="dashboard_admin"
+                              <a href="dashboard_penyelenggara"
                                  class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                     class="w-[18px] h-[18px] mr-4 fill-current" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@
                                        data-original="#000000"></path>
                                  </svg>
                                  Dashboard</a>
-                              <a href="post_admin"
+                              <a href="post_penyelenggara"
                                  class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 24 24">
@@ -185,7 +185,7 @@
                                        data-original="#000000" />
                                  </svg>
                                  Posts</a>
-                              <a href="post_admin"
+                              <a href=""
                                  class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
                                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-4 fill-current"
                                     viewBox="0 0 510 510">
@@ -215,6 +215,176 @@
             </div>
          </header>
 
+         <div class="my-10 px-2">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 w-full max-w-sm rounded-lg overflow-hidden">
+                  <div class="inline-block bg-[#edf2f7] rounded-lg py-2 px-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6" viewBox="0 0 511.999 511.999">
+                        <path fill="#06d"
+                           d="m38.563 418.862 22.51 39.042c4.677 8.219 11.41 14.682 19.319 19.388l80.744-57.248.147-82.19-80.577-36.303L0 337.565c-.016 9.09 2.313 18.185 6.991 26.404z"
+                           data-original="#0066dd" />
+                        <path fill="#00ad3c"
+                           d="m256.293 173.808 4.212-107.064-84.604-32.663c-7.926 4.678-14.682 11.117-19.389 19.319L7.085 311.186C2.379 319.389.016 328.475 0 337.565l161.283.288z"
+                           data-original="#00ad3c" />
+                        <path fill="#00831e"
+                           d="m256.293 173.808 77.503-41.694 3.387-97.745c-7.909-4.706-16.996-7.068-26.379-7.085l-108.499-.194c-9.384-.017-18.479 2.606-26.405 6.991z"
+                           data-original="#00831e" />
+                        <path fill="#0084ff"
+                           d="m350.716 338.192-189.434-.338-80.89 139.438c7.909 4.706 16.996 7.068 26.379 7.085l297.933.532c9.384.017 18.479-2.606 26.405-6.991l.314-93.66z"
+                           data-original="#0084ff" />
+                        <path fill="#ff4131"
+                           d="M431.109 477.919c7.926-4.678 14.682-11.117 19.388-19.319l9.413-16.111 45.005-77.629c4.706-8.202 7.069-17.288 7.085-26.379l-93.221-49.051-67.768 48.764z"
+                           data-original="#ff4131" />
+                        <path fill="#ffba00"
+                           d="m430.756 182.917-74.253-129.16c-4.677-8.22-11.41-14.683-19.32-19.389l-80.891 139.439 94.423 164.385 160.99.288c.016-9.09-2.314-18.185-6.991-26.405z"
+                           data-original="#ffba00" />
+                     </svg>
+                  </div>
+
+                  <div class="mt-4">
+                     <h3 class="text-xl font-bold text-gray-800">Heading</h3>
+                     <p class="mt-2 text-sm text-gray-800">Lorem ipsum dolor sit amet, consectetur.</p>
+                  </div>
+
+                  <div class="mt-6">
+                     <div class="flex mb-2">
+                        <p class="text-sm text-gray-800 flex-1">25 GB</p>
+                        <p class="text-sm text-gray-800">50 GB</p>
+                     </div>
+                     <div class="bg-gray-300 rounded-full w-full h-2.5">
+                        <div class="w-1/2 h-full rounded-full bg-blue-600 flex items-center">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+               </div>
+            </div>
+         </div>
       </section>
    </div>
 </div>
