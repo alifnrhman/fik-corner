@@ -55,3 +55,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 });
+
+// Enable edit di form
+function edit() {
+   var input = document.getElementById("nomor_telepon");
+
+   if (input.disabled == true) {
+      input.disabled = false;
+      input.focus();
+      input.classList.remove("bg-gray-100");
+      input.classList.remove("text-gray-500");
+      input.classList.add("bg-transparent");
+      input.classList.add("border");
+      input.classList.add("border-gray-100");
+      input.classList.add("text-gray-800");
+   }
+}
+
+// Filter kegiatan saya
+document.addEventListener("DOMContentLoaded", function () {
+   let tabs = document.querySelectorAll(".tab");
+   let contents = document.querySelectorAll(".tab-content");
+
+   tabs.forEach(function (tab) {
+      tab.addEventListener("click", function (e) {
+         let targetId = tab.id.replace("Tab", "Content");
+
+         // Hide all content divs
+         contents.forEach(function (content) {
+            content.classList.add("hidden");
+         });
+
+         // Remove active class from all tabs
+         tabs.forEach(function (tab) {
+            tab.classList.remove("text-white", "font-bold", "bg-purple-600", "hover:bg-gray-50");
+            tab.classList.add("text-gray-600", "font-semibold", "bg-white", "hover:bg-gray-50");
+         });
+
+         // Show the target content
+         document.getElementById(targetId).classList.remove("hidden");
+
+         // Add active class to the clicked tab
+         tab.classList.add("text-white", "font-bold", "bg-primary", "hover:bg-gray-50");
+         tab.classList.remove("text-gray-600", "font-semibold", "bg-white", "hover:bg-gray-50");
+      });
+   });
+});

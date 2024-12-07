@@ -9,7 +9,7 @@
       LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori 
       LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara
    ";
-   $where = "status = 'Aktif' AND id_kegiatan = " . $_GET['id'];
+   $where = "id_kegiatan = " . $_GET['id'];
    $orderBy = "";
    $limit = "";
 
@@ -98,6 +98,11 @@
                            Daftar
                         </button>" .
                      "</a>";
+            } else if ($data[0]['status'] == "Selesai") {
+               echo "<a href='download_sertifikat.php' class='w-48 shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none'>
+                        <i class='fa-solid fa-download text-white mr-1'></i>
+                        Download Sertifikat
+                     </a>";
             } else {
                echo "<button type='submit' disabled
                            class='w-48 shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary opacity-50 focus:outline-none'>
@@ -105,7 +110,6 @@
                      </button>";
             }
             ?>
-
          </div>
       </div>
    </div>

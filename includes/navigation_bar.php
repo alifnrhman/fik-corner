@@ -113,8 +113,7 @@
                         "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[220px] max-sm:min-w-[220px] right-0 top-9 absolute hidden group-hover:block'>" .
                            "<ul class='space-y-1.5'>" .
                               "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
-                              "<li><a href='riwayat_kegiatan' class='text-sm text-gray-500 hover:text-primary'>Riwayat Kegiatan</a></li>" .
-                              "<li><a href='kegiatan_tersimpan' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Tersimpan</a></li>" .
+                              "<li><a href='kegiatan_saya' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Saya</a></li>" .
                            "</ul>" .
                            "<hr class='border-b-0 my-4' />" .
                            "<ul class='space-y-1.5'>" .

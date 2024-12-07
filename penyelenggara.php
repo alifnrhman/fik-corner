@@ -38,7 +38,7 @@
       </div>
 
       <div class="container">
-         <form class="max-w-full max-md:mx-auto w-full pl-6" action="process_login.php" method="post">
+         <form class="max-w-full max-md:mx-auto w-full pl-6" action="process_daftar_penyelenggara.php" method="post">
             <div class="flex flex-row gap-4">
                <div class="basis-3/5">
                   <label class="text-gray-800 text-[15px] mb-2 block">Nama Penyelenggara</label>
