@@ -16,18 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    });
 
-   // Admin Sidebar
+   // Sidebar
    const currentPath = window.location.pathname;
-   console.log("Current Path:", currentPath); // Debugging statement
-
    const menuItems = document.querySelectorAll(".menu-item");
 
    menuItems.forEach((item) => {
       const href = item.getAttribute("href");
-      console.log("Menu Item Href:", href); // Debugging statement
 
       if (href && (currentPath === `/${href}` || currentPath.includes(href))) {
-         console.log("Match found for:", href); // Debugging statement
          item.classList.remove("text-gray-800");
          item.classList.add("text-primary", "font-semibold", "bg-secondary");
       } else {

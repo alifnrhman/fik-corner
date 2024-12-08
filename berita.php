@@ -11,7 +11,7 @@
 <main
    class="w-full h-full pt-40 sm:pt-38 md:pt-40 lg:pt-40 xl:pt-36 2xl:pt-24 px-14 sm:px-14 md:px-14 lg:px-28 flex-grow">
    <div>
-      <p class="font-bold text-2xl">Berita Terbaru</p>
+      <p class="font-bold text-2xl"><?= $product['stock'] == 0 ? "Habis" : "Tambah" ?></p>
    </div>
    <div class='max-w-auto'>
       <div

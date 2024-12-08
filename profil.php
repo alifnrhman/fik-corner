@@ -30,7 +30,7 @@
       <div class="container">
          <div class="items-center flex flex-col gap-y-5">
             <form action="update_foto_profil.php" method="post" enctype="multipart/form-data">
-               <div class="w-full rounded-full">
+               <div class="w-full rounded-full mb-5">
                   <?php
                      if (isset($data[0]['foto']) && !empty($data[0]['foto'])) {
                         echo "<img src='" . $data[0]['foto'] . "' class='w-60 h-60 rounded-full object-cover mx-auto' />";
@@ -39,7 +39,12 @@
                      }
                   ?>
                </div>
-               <div class="basis-6/12 mt-4">
+               <?php 
+                  if (isset($_COOKIE['error'])) {
+                     echo "<p class='text-red-500 font-semibold text-sm'>" . $_COOKIE['error'] . "</p>";
+                  }
+               ?>
+               <div class="basis-6/12 mt-2">
                   <input type="file" name="foto" id="foto"
                      class="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
                      accept=".png, .jpg, .jpeg" onchange="this.form.submit()" />
@@ -50,7 +55,7 @@
       </div>
 
       <div class="container w-full mt-12 lg:mt-0">
-         <form action="" method="post">
+         <form action="process_ubah_profil.php" method="post">
             <div class="flex gap-4 mb-4">
                <div class="basis-full">
                   <label class="text-gray-800 text-[15px] mb-2 block font-semibold">Nama Lengkap</label>
@@ -114,21 +119,21 @@
                      <div>
                         <label class="text-gray-800 text-[15px] mb-2 block ">Password lama</label>
                         <div class="relative flex items-center">
-                           <input name="password" id="password" type="password"
+                           <input name="password_lama" id="password" type="password"
                               class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                               placeholder="Password lama" onchange="" />
                         </div>
 
                         <label class="text-gray-800 text-[15px] mb-2 block mt-4">Password baru</label>
                         <div class="relative flex items-center">
-                           <input name="password" id="password" type="password"
+                           <input name="password_baru" id="password" type="password"
                               class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                               placeholder="Password baru" />
                         </div>
 
                         <label class="text-gray-800 text-[15px] mb-2 block mt-4">Ulangi password baru</label>
                         <div class="relative flex items-center">
-                           <input name="password" id="password" type="password"
+                           <input name="ulangi_password_baru" id="password" type="password"
                               class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                               placeholder="Ulangi password baru" />
                         </div>

@@ -73,7 +73,7 @@
 
       <div class='flex ml-auto max-lg:w-full'>
          <form action='search.php' method='post'
-            class='flex  bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
+            class='flex w-[500px] bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
             <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...'
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class=" fill-gray-400">
@@ -86,11 +86,11 @@
          <?php 
          if (isset($_SESSION['nim'])) {
             echo
-            "<div class='flex items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
+            "<div class='flex flex-row items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
                "<div>" .
                   "<ul>" .
-                     "<li class='group relative px-1 ms-4'>" .
-                        "<div class='flex flex-wrap items-center justify-center gap-4 cursor-pointer'>" ;
+                     "<li class='group relative px-1 ms-10'>" .
+                        "<div class='flex flex-row items-center justify-center gap-4 cursor-pointer'>" ;
                            if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
                               echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
                            } else {
