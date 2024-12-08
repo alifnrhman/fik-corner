@@ -36,20 +36,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 });
-
-// Admin dashboard
-document.addEventListener("DOMContentLoaded", () => {
-   const currentPath = window.location.pathname;
-   const menuItems = document.querySelectorAll(".menu-item");
-
-   menuItems.forEach((item) => {
-      const href = item.getAttribute("href");
-      if (href && (currentPath === `/${href}` || currentPath.includes(href))) {
-         item.classList.remove("text-gray-800");
-         item.classList.add("text-primary", "font-semibold", "bg-secondary");
-      } else {
-         item.classList.add("text-gray-800");
-         item.classList.remove("text-primary", "font-semibold", "bg-secondary");
-      }
-   });
-});
