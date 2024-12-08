@@ -23,8 +23,8 @@
    }
 
    $jam = strtotime($data[0]['waktu']);
-
    $title = $data[0]['nama_kegiatan'];
+
    include("includes/header.php");
    include("includes/navigation_bar.php");
 ?>
