@@ -19,8 +19,6 @@
             <div class='flex flex-wrap items-center w-full relative tracking-wide'>
                <div class='flex items-center gap-y-6 max-sm:flex-col z-50 w-full pb-2'>
                   <div class="flex items-center justify-end gap-6 ml-auto">
-                     <div class="w-1 h-10 border-l border-gray-400">
-                     </div>
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
                            <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
