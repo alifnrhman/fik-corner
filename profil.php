@@ -25,7 +25,7 @@
    $data = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
 
    // Tampilkan pesan sukses atau gagal
-    if (isset($_SESSION['message'])) {
+   if (isset($_SESSION['message'])) {
     $alert_class = isset($_SESSION['success']) && $_SESSION['success'] ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600';
     echo "<div class='py-2 px-4 mb-4 rounded-md $alert_class'>" . $_SESSION['message'] . "</div>";
     unset($_SESSION['message']);
