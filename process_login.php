@@ -2,45 +2,45 @@
 include('connection.php');
 session_start();
 
-$nim = $_POST['nim'];
-$password = $_POST['password'];
+$nim = $_POST['nim'] ?? '';
+$password = $_POST['password'] ?? '';
 
 if (!empty($nim) && !empty($password)) {
-    // Cek apakah NIM ada di database
-    $sql = "SELECT * FROM users WHERE nim = ?";
+    // Ambil data user berdasarkan NIM
+    $sql = "SELECT nim, password, nama_lengkap, foto FROM users WHERE nim = ?";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("s", $nim);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        // Jika NIM ada, validasi password
+    if ($result && $result->num_rows > 0) {
         $data = $result->fetch_assoc();
 
-        if ($data['password'] === $password) {
-            // Jika NIM dan password benar
-            if (isset($data['foto']) && !empty($data['foto'])) {
-                $data['foto'] = 'data:image/jpeg;base64,' . base64_encode($data['foto']);
-            }
-            
+        // Verifikasi password
+        if (password_verify($password, $data['password'])) {
+            // Login berhasil
             $_SESSION['nim'] = $data['nim'];
             $_SESSION['nama'] = $data['nama_lengkap'];
-            $_SESSION['foto'] = $data['foto'];
-            setcookie('message', '', time() - 3600, "/");
-            header('location: index');
+            $_SESSION['foto'] = $data['foto'] ? 'data:image/jpeg;base64,' . base64_encode($data['foto']) : null;
+
+            header('Location: index.php');
+            exit();
         } else {
-            // Jika password salah
+            // Password salah
             setcookie("message", "Password yang Anda masukkan salah.", time() + 3600, "/");
-            header('location: login');
+            header('Location: login.php');
+            exit();
         }
     } else {
-        // Jika NIM tidak ditemukan
-        setcookie("message", "NIM yang Anda masukkan salah.", time() + 3600, "/");
-        header('location: login');
+        // NIM tidak ditemukan
+        setcookie("message", "NIM yang Anda masukkan tidak ditemukan.", time() + 3600, "/");
+        header('Location: login.php');
+        exit();
     }
 } else {
-    // Jika NIM atau password kosong
+    // Input kosong
     setcookie("message", "Harap isi NIM dan password.", time() + 3600, "/");
-    header('location: login');
+    header('Location: login.php');
+    exit();
 }
 ?>
