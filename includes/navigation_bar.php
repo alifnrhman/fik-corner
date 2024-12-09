@@ -57,7 +57,7 @@
             </li>
             <li class='max-lg:border-b max-lg:py-2'><a href='berita'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Berita</a></li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='penyelenggara'
+            <li class='max-lg:border-b max-lg:py-2'><a href='penyelenggara.php'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Penyelenggara</a></li>
 
          </ul>
@@ -74,7 +74,7 @@
       <div class='flex ml-auto max-lg:w-full'>
          <form action='search.php' method='post'
             class='flex w-[500px] bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
-            <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...'
+            <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...' value=""
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class=" fill-gray-400">
                <path

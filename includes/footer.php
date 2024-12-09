@@ -3,13 +3,13 @@
       <div class="flex flex-wrap items-center sm:justify-between max-sm:flex-col gap-6">
          <!-- Logo -->
          <div class="grayscale">
-            <a href='javascript:void(0)'><img src="assets\fik-corner-logo.png" alt="logo" class='w-44 ' /></a>
+            <a href='index'><img src="assets\fik-corner-logo.png" alt="logo" class='w-44 ' /></a>
          </div>
          <!-- End of Logo -->
 
          <!-- Links -->
          <ul class="flex items-center justify-center flex-wrap gap-y-2 md:justify-end space-x-6">
-            <li><a href="javascript:void(0)" class="text-gray-500 hover:underline text-base">Home</a></li>
+            <li><a href="index" class="text-gray-500 hover:underline text-base">Home</a></li>
             <li><a href="javascript:void(0)" class="text-gray-500 hover:underline text-base">Terms of Service</a></li>
             <li><a href="javascript:void(0)" class="text-gray-500 hover:underline text-base">Privacy Policy</a></li>
             <li><a href="javascript:void(0)" class="text-gray-500 hover:underline text-base">Contact</a></li>

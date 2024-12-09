@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <div class="mt-8 mb-5 flex items-center gap-x-3">
-      <a href='berita'>
+      <a href='<?php echo $_SERVER['HTTP_REFERER'] ?>'>
          <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
       </a>
       <h1 class="font-bold text-xl">Kembali</h1>

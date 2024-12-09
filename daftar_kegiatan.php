@@ -1,13 +1,12 @@
 <?php
    session_start();
+   include("includes/functions.php");
 
    if (!isset($_SESSION['nim'])) {
       echo "<script>alert('Anda harus login terlebih dahulu!');
             window.location.href='login';
             </script>";
    }
-
-   include("includes/functions.php");
 
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
    $table = "kegiatan";

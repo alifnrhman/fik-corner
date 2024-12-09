@@ -40,7 +40,7 @@ function get_data($connection, $columns = '*', $table, $join = '', $where = '', 
         }
         return $data;
     } else {
-        return [];  // Tidak ada data, kembalikan array kosong
+        return [];  // Jika tidak ada data, kembalikan array kosong
     }
 }
 

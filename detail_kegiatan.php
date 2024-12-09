@@ -31,13 +31,9 @@
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <div class="mt-8 mb-5 flex items-center gap-x-3">
-      <?php
-         $url_kegiatan = $data[0]['kategori'];
-         
-         echo "<a href='" . $url_kegiatan . "'>" . 
-            "<i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>" .
-         "</a>";
-      ?>
+      <a href='<?php echo $_SERVER['HTTP_REFERER'] ?>'>
+         <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
+      </a>
       <h1 class="font-bold text-xl">Kembali</h1>
    </div>
    <div class="container block lg:flex">
@@ -85,9 +81,9 @@
          </div>
          <div class="mt-8">
             <?php 
-            $sql = "SELECT * FROM mhs_kegiatan WHERE nim = ? AND id_kegiatan = ?";
+            $sql = "SELECT * FROM mhs_kegiatan, mhs_riwayat_kegiatan WHERE (mhs_kegiatan.nim = ? AND mhs_kegiatan.id_kegiatan = ?) OR (mhs_riwayat_kegiatan.nim = ? AND mhs_riwayat_kegiatan.id_kegiatan = ?)";
             $stmt = $connection->prepare($sql);
-            $stmt->bind_param("ss", $_SESSION['nim'], $data[0]['id_kegiatan']);
+            $stmt->bind_param("ssss", $_SESSION['nim'], $data[0]['id_kegiatan'], $_SESSION['nim'], $data[0]['id_kegiatan']);
             $stmt->execute();
             $result = $stmt->get_result();
 

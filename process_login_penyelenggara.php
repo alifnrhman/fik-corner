@@ -19,6 +19,7 @@ if (!empty($email) && !empty($password)) {
 
         if ($data['password'] === $password) {
             // Jika email dan password benar
+            $_SESSION['id_penyelenggara'] = $data['id_penyelenggara'];
             $_SESSION['email'] = $data['email'];
             $_SESSION['nama_penyelenggara'] = $data['nama_penyelenggara'];
             setcookie('message', '', time() - 3600, "/");
@@ -26,16 +27,16 @@ if (!empty($email) && !empty($password)) {
         } else {
             // Jika password salah
             setcookie("message", "Password yang Anda masukkan salah.", time() + 3600, "/");
-            header('location: penyelenggara');
+            header('location: login_penyelenggara');
         }
     } else {
         // Jika email tidak ditemukan
         setcookie("message", "Email yang Anda masukkan salah.", time() + 3600, "/");
-        header('location: penyelenggara');
+        header('location: login_penyelenggara');
     }
 } else {
     // Jika email atau password kosong
     setcookie("message", "Harap isi email dan password.", time() + 3600, "/");
-    header('location: penyelenggara');
+    header('location: login_penyelenggara');
 }
 ?>

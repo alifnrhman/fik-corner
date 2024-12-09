@@ -3,7 +3,7 @@
    setcookie("message", "");
 
 	if (isset($_SESSION['nama_penyelenggara'])) {
-		header("location: dashboard_penyelenggara");
+		header("location: penyelenggara_dashboard");
 	}
 
    $title = "Login Penyelenggara";

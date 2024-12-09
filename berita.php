@@ -5,30 +5,22 @@
    include("includes/header.php");
    include("includes/navigation_bar.php");
    include("includes/functions.php");
-
 ?>
 
 <main
    class="w-full h-full pt-40 sm:pt-38 md:pt-40 lg:pt-40 xl:pt-36 2xl:pt-24 px-14 sm:px-14 md:px-14 lg:px-28 flex-grow">
    <div>
-      <p class="font-bold text-2xl"><?= $product['stock'] == 0 ? "Habis" : "Tambah" ?></p>
+      <p class="font-bold text-2xl">Berita</p>
    </div>
    <div class='max-w-auto'>
       <div
          class="mt-8 rounded font-sans grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-lg:max-w-3xl max-md:max-w-md mx-auto">
          <div>
             <?php
-               $columns = "*";
-               $table = "berita";
-               $join = "";
-               $where = "";
-               $orderBy = "";
-               $limit = "";
-
                // Mengambil data
-               $news = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
+               $berita = get_data($connection, '*', 'berita');
                  
-               foreach ($news as $data) {
+               foreach ($berita as $data) {
                $data['tanggal'] = format_tanggal($data['tanggal']);
 
                $url_berita = "detail_berita.php?id=" . $data['id_berita'];

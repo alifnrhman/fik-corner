@@ -9,40 +9,14 @@
    include("includes/header.php");
    include("includes/functions.php");
 
-   // Mengambil data kegiatan aktif
-   $kegiatan_aktif = get_data(
+   // Mengambil data kegiatan yang menunggu verifikasi
+   $menunggu_verifikasi = get_data(
       $connection,
-      "id_kegiatan",
+      "kegiatan.*, kategori_kegiatan.kategori",
       "kegiatan",
-      "",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Aktif'"
-   );
-
-   // Mengambil data kegiatan selesai
-   $kegiatan_selesai = get_data(
-      $connection,
-      "id_kegiatan",
-      "kegiatan",
-      "",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Selesai'"
-   );
-
-   // Mengambil data peserta aktif
-   $peserta_aktif = get_data(
-      $connection,
-      "mhs_kegiatan.id_kegiatan",
-      "mhs_kegiatan",
-      "LEFT JOIN kegiatan ON mhs_kegiatan.id_kegiatan = kegiatan.id_kegiatan",
-      "kegiatan.id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "'"
-   );
-
-   // Mengambil data peserta selesai mengikuti
-   $peserta_selesai = get_data(
-      $connection,
-      "mhs_riwayat_kegiatan.id_kegiatan",
-      "mhs_riwayat_kegiatan",
-      "LEFT JOIN kegiatan ON mhs_riwayat_kegiatan.id_kegiatan = kegiatan.id_kegiatan",
-      "kegiatan.id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "'"
+      "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori ",
+      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Pending'",
+      "kegiatan.posted_at ASC"
    );
 
 ?>
@@ -101,33 +75,50 @@
          </header>
 
          <div class="bg-gray-100 pt-5 font-sans">
-            <div class="max-w-full max-sm:max-w-sm">
-               <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">Statistik</h2>
-               <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-10">
-                  <div class="bg-white rounded-md border px-7 py-8">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Aktif</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
-                        <?= count($kegiatan_aktif); ?>
-                     </h3>
-                  </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Selesai</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
-                        <?= count($kegiatan_selesai); ?>
-                     </h3>
-                  </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Peserta Aktif</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
-                        <?= count($peserta_aktif); ?>
-                     </h3>
-                  </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Peserta Selesai Mengikuti</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
-                        <?= count($peserta_selesai); ?>
-                     </h3>
-                  </div>
+            <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
+               <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
+                  Menunggu Verifikasi (<?= count($menunggu_verifikasi); ?>)
+               </h2>
+               <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                  <?php 
+                     foreach ($menunggu_verifikasi as $data) {
+                        $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
+                        $data['tanggal'] = format_tanggal($data['tanggal']);
+
+                        echo
+                        "<a href=''>" . 
+                           "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
+                              "<div class='w-full h-60 object-cover bg-gradient-to-b from-gray-800 via-transparent to-transparent absolute' /></div>" .
+                              "<div class='left-5 mt-5 absolute'>" .
+                                 "<span class='flex items-center text-primary text-sm font-semibold bg-orange-100/90 px-5 py-1.5 tracking-wide rounded-full'>
+                                    Pending
+                                 </span>" .
+                              "</div>" .
+                              "<img src='" . $data['foto'] . "' alt='" . $data['nama_kegiatan'] . "' class='w-full h-60 object-cover' />" .
+                              "<div class='p-6'>" .
+                                 "<div class='flex justify-between items-center mb-1'>" .
+                                    "<div class=''>" .
+                                       "<span class='font-medium text-sm text-primary'>" . $data['kategori'] . "</span>" .
+                                    "</div>" .
+                                    "<div class=''>" .
+                                       "<span class='font-medium text-sm text-gray-600'>" . $data['tanggal'] . "</span>" .
+                                    "</div>" .
+                                 "</div>" .
+                                 "<div class='h-40'>" .
+                                    "<div class='h-14'>" .
+                                       "<h3 class='text-xl font-bold text-gray-800 line-clamp-2'>" . $data['nama_kegiatan'] . "</h3>" .
+                                    "</div>" .
+                                    "<hr class='my-3' />" .
+                                    "<div class='max-w-full'>" .
+                                       "<p class='text-gray-400 text-sm line-clamp-4 text-justify'>" . $data['deskripsi_singkat'] . "</p>" .
+                                    " </div>" .
+                                 "</div>" .
+                              "</div>" .
+                           "</div>" .
+                        "</a>";
+                        }
+                  ?>
+
                </div>
             </div>
          </div>

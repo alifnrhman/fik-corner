@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-   $title = "Lomba";
+   $title = 'Hasil pencarian untuk "' . $_POST['search'] . '"';
    include("includes/header.php");
    include("includes/navigation_bar.php");
    include("includes/functions.php");
@@ -31,7 +31,6 @@
 
    // Fetch data
    $results = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
-
 ?>
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
