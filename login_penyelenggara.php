@@ -3,7 +3,7 @@
    setcookie("message", "");
 
 	if (isset($_SESSION['nama_penyelenggara'])) {
-		header("location: penyelenggara_dashboard");
+		header("location: dashboard_penyelenggara");
 	}
 
    $title = "Login Penyelenggara";
@@ -16,8 +16,7 @@
          <form class="max-w-lg max-md:mx-auto w-full p-6" action="process_login_penyelenggara.php" method="post">
             <div class="mb-8">
                <h3 class="text-gray-800 text-4xl font-extrabold">Login Penyelenggara</h3>
-               <p class="text-gray-800 text-sm mt-6">Masuk ke dashboard penyelenggara FIK Corner menggunakan email
-                  dan
+               <p class="text-gray-800 text-sm mt-6">Masuk ke dashboard penyelenggara FIK Corner menggunakan email dan
                   password anda.
                </p>
             </div>

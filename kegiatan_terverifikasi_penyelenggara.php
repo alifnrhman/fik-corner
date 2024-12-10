@@ -10,7 +10,7 @@
    include("includes/functions.php");
 
    // Mengambil data kegiatan terverifikasi
-   $menunggu_verifikasi = get_data(
+   $kegiatan_aktif = get_data(
       $connection,
       "kegiatan.*, kategori_kegiatan.kategori",
       "kegiatan",
@@ -77,46 +77,16 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
-                  Kegiatan Aktif (<?= count($menunggu_verifikasi); ?>)
+                  Kegiatan Aktif (<?= count($kegiatan_aktif); ?>)
                </h2>
                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                   <?php 
-                     foreach ($menunggu_verifikasi as $data) {
+                     foreach ($kegiatan_aktif as $data) {
                         $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
                         $data['tanggal'] = format_tanggal($data['tanggal']);
 
-                        echo
-                        "<a href=''>" . 
-                           "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
-                              "<div class='w-full h-60 object-cover bg-gradient-to-b from-gray-800 via-transparent to-transparent absolute' /></div>" .
-                              "<div class='left-5 mt-5 absolute'>" .
-                                 "<span class='flex items-center text-green-600 text-sm font-semibold bg-green-100/90 px-6 py-1.5 tracking-wide rounded-full'>
-                                    Aktif
-                                 </span>" .
-                              "</div>" .
-                              "<img src='" . $data['foto'] . "' alt='" . $data['nama_kegiatan'] . "' class='w-full h-60 object-cover' />" .
-                              "<div class='p-6'>" .
-                                 "<div class='flex justify-between items-center mb-1'>" .
-                                    "<div class=''>" .
-                                       "<span class='font-medium text-sm text-primary'>" . $data['kategori'] . "</span>" .
-                                    "</div>" .
-                                    "<div class=''>" .
-                                       "<span class='font-medium text-sm text-gray-600'>" . $data['tanggal'] . "</span>" .
-                                    "</div>" .
-                                 "</div>" .
-                                 "<div class='h-40'>" .
-                                    "<div class='h-14'>" .
-                                       "<h3 class='text-xl font-bold text-gray-800 line-clamp-2'>" . $data['nama_kegiatan'] . "</h3>" .
-                                    "</div>" .
-                                    "<hr class='my-3' />" .
-                                    "<div class='max-w-full'>" .
-                                       "<p class='text-gray-400 text-sm line-clamp-4 text-justify'>" . $data['deskripsi_singkat'] . "</p>" .
-                                    " </div>" .
-                                 "</div>" .
-                              "</div>" .
-                           "</div>" .
-                        "</a>";
-                        }
+                        include("includes/event_card_penyelenggara.php");
+                     }
                   ?>
 
                </div>

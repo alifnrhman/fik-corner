@@ -22,6 +22,7 @@ if (!empty($email) && !empty($password)) {
             $_SESSION['id_penyelenggara'] = $data['id_penyelenggara'];
             $_SESSION['email'] = $data['email'];
             $_SESSION['nama_penyelenggara'] = $data['nama_penyelenggara'];
+            $_SESSION['logo'] = $data['logo'] ? 'data:image/jpeg;base64,' . base64_encode($data['logo']) : null;
             setcookie('message', '', time() - 3600, "/");
             header('location: dashboard_penyelenggara');
         } else {
