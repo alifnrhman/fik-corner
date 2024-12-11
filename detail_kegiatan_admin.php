@@ -1,6 +1,5 @@
 <?php
    session_start();
-
    include("includes/functions.php");
 
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
@@ -135,36 +134,33 @@
                            "</div>";
                         ?>
                      </div>
-                     <div class="flex mt-8 gap-x-5">
+                     <div class="mt-8 space-x-5">
                         <?php 
-                           $data = get_data(
-                              $connection,
-                              "*",
-                              "kegiatan",
-                              "",
-                              "id_kegiatan = " . $_GET['id'],
-                              "kegiatan.posted_at ASC"
-                           );
-                           
-                           if ($data[0]['status'] == "Pending") {
-                           echo
-                              "<a href='verifikasi_kegiatan.php?id=" . $_GET['id'] . "'>
-                                 <button type='submit'
-                                    class='w-40 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none'>
-                                    <i class='fa-solid fa-check mr-1'></i>
-                                    Verifikasi
-                                 </button>
-                              </a>" .
+                              $data = get_data(
+                                 $connection,
+                                 "*",
+                                 "kegiatan",
+                                 "",
+                                 "id_kegiatan = " . $_GET['id'],
+                                 "kegiatan.posted_at ASC"
+                              );
+                              
+                              if ($data[0]['status'] == "Pending") {
+                              echo
+                                    "<a href='process_verifikasi_kegiatan.php?id=" . $_GET['id'] . "&status=verifikasi'
+                                       class='w-40 shadow-md py-3 px-10 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none' value='verifikasi'>
+                                       <i class='fa-solid fa-check mr-1'></i>
+                                       Verifikasi
+                                    </a>" .
 
-                              "<a href='tolak_kegiatan.php?id=" . $_GET['id'] . "'>
-                                 <button type='submit'
-                                    class='w-40 shadow-sm py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-primary bg-white hover:bg-primaryHover hover:text-white focus:outline-none transition-all duration-300'>
-                                    <i class='fa-solid fa-xmark mr-1'></i>
-                                    Tolak
-                                 </button>
-                              </a>";
-                           }
-                        ?>
+                                    "<a href='process_verifikasi_kegiatan.php?id=" . $_GET['id'] . "&status=tolak'
+                                       class='w-40 shadow-sm py-3 px-10 text-sm tracking-wide font-semibold rounded-md text-primary bg-white hover:bg-primaryHover hover:text-white focus:outline-none transition-all duration-300 border border-gray-300'
+                                       value='tolak'>
+                                       <i class='fa-solid fa-xmark mr-1'></i>
+                                       Tolak
+                                    </a>";
+                              }
+                           ?>
                      </div>
                   </div>
                </div>

@@ -33,11 +33,11 @@
 
       <div class='mt-auto space-x-5'>
          <?=
-            "<a class='w-40 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none cursor-pointer'>
-                  <i class='fa-solid fa-check mr-1'></i>
-                  Verifikasi
+            "<a href='process_verifikasi_penyelenggara.php?id=" . $data['id_penyelenggara'] . "&status=verifikasi' class='w-40 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none cursor-pointer'>
+               <i class='fa-solid fa-check mr-1'></i>
+               Verifikasi
             </a>" .
-            "<a 
+            "<a href='process_verifikasi_penyelenggara.php?id=" . $data['id_penyelenggara'] . "&status=tolak'
                class='w-40 shadow-sm py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-primary bg-white hover:bg-primaryHover hover:text-white focus:outline-none transition-all duration-300 border border-gray-200 cursor-pointer'>
                <i class='fa-solid fa-xmark mr-1'></i>
                Tolak
