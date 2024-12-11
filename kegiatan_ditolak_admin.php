@@ -16,7 +16,7 @@
       "kegiatan",
       "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori
       LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara",
-      "status = 'Pending'",
+      "status = 'Ditolak'",
       "kegiatan.posted_at ASC"
    );
 
