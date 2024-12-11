@@ -9,6 +9,15 @@
    include("includes/header.php");
    include("includes/functions.php");
 
+   // Mengambil data penyelenggara menunggu verifikasi
+   $penyelenggara_pending = get_data(
+      $connection,
+      "id_penyelenggara",
+      "penyelenggara",
+      "",
+      "status_verifikasi = 'Belum Terverifikasi'"
+   );
+
    // Mengambil data kegiatan menunggu verifikasi
    $kegiatan_pending = get_data(
       $connection,
@@ -66,13 +75,8 @@
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
                            <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
-                           <?php
-                              if (isset($_SESSION['logo']) && !empty($_SESSION['logo'])) {
-                                 echo "<img src='" . $_SESSION['logo'] . "' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
-                              } else {
-                                 echo "<img src='assets\default_pfp.svg' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
-                              }
-                           ?>
+                           <img src='assets\default_pfp.svg'
+                              class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />
                         </div>
 
                         <div
@@ -107,28 +111,34 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-sm:max-w-sm">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">Statistik</h2>
-               <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-10">
-                  <div class="bg-white rounded-md border px-7 py-8">
+               <div class="grid md:grid-cols-5 sm:grid-cols-2 gap-10">
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
+                     <p class="text-gray-400 text-base font-semibold mb-1">Penyelenggara Menunggu Verifikasi</p>
+                     <h3 class="text-primary text-3xl font-extrabold mt-auto">
+                        <?= count($penyelenggara_pending); ?>
+                     </h3>
+                  </div>
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Menunggu Verifikasi</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
+                     <h3 class="text-primary text-3xl font-extrabold mt-auto">
                         <?= count($kegiatan_pending); ?>
                      </h3>
                   </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Aktif</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
+                     <h3 class="text-primary text-3xl font-extrabold mt-auto">
                         <?= count($kegiatan_aktif); ?>
                      </h3>
                   </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Selesai</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
+                     <h3 class="text-primary text-3xl font-extrabold mt-auto">
                         <?= count($kegiatan_selesai); ?>
                      </h3>
                   </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Ditolak</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
+                     <h3 class="text-primary text-3xl font-extrabold mt-auto">
                         <?= count($kegiatan_ditolak); ?>
                      </h3>
                   </div>

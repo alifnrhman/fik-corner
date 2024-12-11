@@ -10,7 +10,7 @@
    include("includes/functions.php");
 
    // Mengambil data kegiatan yang menunggu verifikasi
-   $menunggu_verifikasi = get_data(
+   $kegiatan_menunggu_verifikasi = get_data(
       $connection,
       "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo",
       "kegiatan",
@@ -18,6 +18,16 @@
       LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara",
       "status = 'Pending'",
       "kegiatan.posted_at ASC"
+   );
+
+   // Mengambil data penyelenggara yang menunggu verifikasi
+   $penyelenggara_menunggu_verifikasi = get_data(
+      $connection,
+      "*",
+      "penyelenggara",
+      "",
+      "status_verifikasi = 'Belum Terverifikasi'",
+      "tanggal_daftar ASC"
    );
 
 ?>
@@ -78,11 +88,11 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
-                  Menunggu Verifikasi (<?= count($menunggu_verifikasi); ?>)
+                  Kegiatan Menunggu Verifikasi (<?= count($kegiatan_menunggu_verifikasi); ?>)
                </h2>
                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                   <?php 
-                     foreach ($menunggu_verifikasi as $data) {
+                     foreach ($kegiatan_menunggu_verifikasi as $data) {
                         $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
                         $data['tanggal'] = format_tanggal($data['tanggal']);
                         $url = "detail_kegiatan_admin.php?id=" . $data['id_kegiatan'];
@@ -90,7 +100,20 @@
                         include("includes/event_card_admin.php");
                      }
                   ?>
+               </div>
+            </div>
+            <div class="max-w-full max-lg:max-w-4xl max-md:max-w-sm mx-auto my-10">
+               <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
+                  Penyelenggara Menunggu Verifikasi (<?= count($penyelenggara_menunggu_verifikasi); ?>)
+               </h2>
+               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                  <?php 
+                     foreach ($penyelenggara_menunggu_verifikasi as $data) {
+                        $url = "detail_penyelenggara_admin.php?id=" . $data['id_penyelenggara'];
 
+                        include("includes/penyelenggara_card_admin.php");
+                     }
+                  ?>
                </div>
             </div>
          </div>
