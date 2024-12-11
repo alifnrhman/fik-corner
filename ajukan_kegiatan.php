@@ -133,9 +133,10 @@
 
                         <div class="basis-2/12 mt-4">
                            <label class="text-gray-800 text-[15px] mb-2 block">Biaya</label>
-                           <input name="biaya" id="biaya" type="number" required
+                           <input name="biaya" id="biaya" type="number" 
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300"
                               placeholder="Contoh: 25000" />
+                              <p class="text-xs text-gray-400 ps-2 mt-2">Kosongkan biaya jika gratis.</p>
                         </div>
 
                         <div class="basis-4/12 mt-4">
