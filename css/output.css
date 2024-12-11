@@ -2439,6 +2439,14 @@ video {
     width: max-content;
   }
 
+  .lg\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .lg\:w-\[400px\] {
+    width: 400px;
+  }
+
   .lg\:min-w-\[250px\] {
     min-width: 250px;
   }
@@ -2460,6 +2468,11 @@ video {
          column-gap: 2.5rem;
   }
 
+  .lg\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -2468,6 +2481,16 @@ video {
   .lg\:px-28 {
     padding-left: 7rem;
     padding-right: 7rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .lg\:px-36 {
+    padding-left: 9rem;
+    padding-right: 9rem;
   }
 
   .lg\:pt-20 {
