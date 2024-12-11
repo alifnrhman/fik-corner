@@ -2,11 +2,19 @@
    <div id="sidebar-collapse-menu"
       class=" bg-white shadow-lg h-screen fixed top-0 left-0 overflow-auto z-[99] lg:min-w-[250px] lg:w-max max-lg:w-0 max-lg:invisible transition-all duration-500">
       <div class="pt-8 pb-2 px-6 sticky top-0 bg-white min-h-[80px] z-[100]">
-         <a href="index" class="outline-none"><img src="assets\fik-corner-logo.png" alt="logo" class='w-[170px]' />
+         <a href="dashboard_admin" class="outline-none"><img src="assets\fik-corner-logo.png" alt="logo"
+               class='w-[170px]' />
          </a>
       </div>
 
       <div class="py-6 px-6">
+         <div class="flex justify-center mb-5">
+            <a href="tambah_berita"
+               class="inline-block w-full shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none">
+               <i class="fa-solid fa-plus mr-4"></i>
+               Tambah Berita
+            </a>
+         </div>
          <ul class="space-y-2">
             <li>
                <a href="dashboard_admin"
@@ -50,7 +58,22 @@
                      <circle cx="4.029" cy="30.062" r="4.029" data-original="#000000" />
                      <circle cx="4.029" cy="48.661" r="4.029" data-original="#000000" />
                   </svg>
-                  <span>Terverifikasi</span>
+                  <span>Kegiatan Aktif</span>
+               </a>
+            </li>
+            <li>
+               <a href="kegiatan_selesai_admin"
+                  class="menu-item text-gray-800 text-sm flex items-center cursor-pointer hover:bg-secondary rounded-md px-3 py-3 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
+                     viewBox="0 0 60.123 60.123">
+                     <path
+                        d="M57.124 51.893H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6zm0-18.831H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6zm0-18.831H16.92a3 3 0 1 1 0-6h40.203a3 3 0 0 1 .001 6z"
+                        data-original="#000000" />
+                     <circle cx="4.029" cy="11.463" r="4.029" data-original="#000000" />
+                     <circle cx="4.029" cy="30.062" r="4.029" data-original="#000000" />
+                     <circle cx="4.029" cy="48.661" r="4.029" data-original="#000000" />
+                  </svg>
+                  <span>Kegiatan Selesai</span>
                </a>
             </li>
             <li>

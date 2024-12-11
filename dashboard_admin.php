@@ -9,38 +9,40 @@
    include("includes/header.php");
    include("includes/functions.php");
 
+   // Mengambil data kegiatan menunggu verifikasi
+   $kegiatan_pending = get_data(
+      $connection,
+      "id_kegiatan",
+      "kegiatan",
+      "",
+      "status = 'Pending'"
+   );
+
+   // Mengambil data kegiatan aktif
    $kegiatan_aktif = get_data(
       $connection,
       "id_kegiatan",
       "kegiatan",
       "",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Aktif'"
+      "status = 'Aktif'"
    );
-
+   
    // Mengambil data kegiatan selesai
    $kegiatan_selesai = get_data(
-      $connection,
-      "id_kegiatan",
-      "kegiatan",
-      "",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Selesai'"
-   );
-   // Mengambil data peserta aktif
-   $kegiatan_pending = get_data(
       $connection,
       "status",
       "kegiatan",
       "",
-      "status = '" . $_SESSION['id_kegiatan'] . "'AND status = 'Pending'"
+      "status = 'Selesai'"
    );
 
-   // Mengambil data peserta selesai mengikuti
+   // Mengambil data kegiatan ditolak
    $kegiatan_ditolak = get_data(
       $connection,
       "status",
       "kegiatan",
       "",
-      "status = '" . $_SESSION['id_kegiatan'] . "'AND status = 'Ditolak'"
+      "status = 'Ditolak'"
    );
 ?>
 
@@ -107,6 +109,12 @@
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">Statistik</h2>
                <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-10">
                   <div class="bg-white rounded-md border px-7 py-8">
+                     <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Menunggu Verifikasi</p>
+                     <h3 class="text-primary text-3xl font-extrabold">
+                        <?= count($kegiatan_pending); ?>
+                     </h3>
+                  </div>
+                  <div class="bg-white rounded-md border px-7 py-8">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Aktif</p>
                      <h3 class="text-primary text-3xl font-extrabold">
                         <?= count($kegiatan_aktif); ?>
@@ -116,12 +124,6 @@
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Selesai</p>
                      <h3 class="text-primary text-3xl font-extrabold">
                         <?= count($kegiatan_selesai); ?>
-                     </h3>
-                  </div>
-                  <div class="bg-white rounded-md border px-7 py-8">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Pending</p>
-                     <h3 class="text-primary text-3xl font-extrabold">
-                        <?= count($kegiatan_pending); ?>
                      </h3>
                   </div>
                   <div class="bg-white rounded-md border px-7 py-8">

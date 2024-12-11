@@ -5,13 +5,26 @@
       header('location: admin');
    }
    
-   $title = "Review";
+   $title = "Kegiatan Ditolak";
    include("includes/header.php");
+   include("includes/functions.php");
+
+   // Mengambil data kegiatan yang ditolak
+   $kegiatan_ditolak = get_data(
+      $connection,
+      "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo",
+      "kegiatan",
+      "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori
+      LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara",
+      "status = 'Pending'",
+      "kegiatan.posted_at ASC"
+   );
+
 ?>
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
    <div class="flex items-start">
-      <?php include("includes/sidebar_admin.php"); ?>
+      <?php include("includes/sidebar_admin.php") ?>
 
       <section class="main-content w-full px-8">
          <header class='z-50 bg-[#f7f6f9] sticky top-0 pt-8'>
@@ -28,13 +41,8 @@
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
                            <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
-                           <?php
-                              if (isset($_SESSION['logo']) && !empty($_SESSION['logo'])) {
-                                 echo "<img src='" . $_SESSION['logo'] . "' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
-                              } else {
-                                 echo "<img src='assets\default_pfp.svg' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
-                              }
-                           ?>
+                           <img src="assets\default_pfp.svg" alt="profile-pic"
+                              class="w-[38px] h-[38px] rounded-full border-2 border-gray-300 cursor-pointer" />
                         </div>
 
                         <div
@@ -66,64 +74,23 @@
                </div>
             </div>
          </header>
-         
-         <div class="my-2 px-2">
-            <div class="bg-gray-100 pt-5 font-sans">
-               <?php 
-               include "connection.php";
 
-               $result = $connection->query("SELECT COUNT(*) AS total FROM kegiatan WHERE status= 'Ditolak'");
+         <div class="bg-gray-100 pt-5 font-sans">
+            <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
+               <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
+                  Kegiatan Ditolak (<?= count($kegiatan_ditolak); ?>)
+               </h2>
+               <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                  <?php 
+                     foreach ($kegiatan_ditolak as $data) {
+                        $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
+                        $data['tanggal'] = format_tanggal($data['tanggal']);
+                        $url = "detail_kegiatan_admin.php?id=" . $data['id_kegiatan'];
 
-               if ($result) {
-                  $row = $result->fetch_assoc();
-                  $total_id_kegiatan = $row['total'];
-                  } else {
-                     $total_id_kegiatan = 0; 
-                  }
-                  echo "
-                  <div>
-                     <h2 class='text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4'>
-                        Kegiatan Ditolak ($total_id_kegiatan)
-                     </h2>
-                  </div>";
-               ?>
-            </div>
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
-            <?php
-               include("connection.php");
-               $query = "
-                     SELECT 
-                        k.nama_kegiatan, 
-                        k.deskripsi_singkat, 
-                        k.tanggal, 
-                        k.posted_at, 
-                        p.nama_penyelenggara
-                     FROM kegiatan k
-                     JOIN penyelenggara p ON k.id_penyelenggara = p.id_penyelenggara
-                     WHERE k.status = 'Ditolak'
-               ";
-               $result = $connection->query($query);
-
-               if ($result->num_rows > 0) {
-                     while ($row = $result->fetch_assoc()) {
-               ?>
-                        <div class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] p-6 rounded-lg overflow-hidden">
-                           <div class="bg-[#edf2f7] rounded-lg py-10 px-6">
-                                 <h3 class="text-xl font-bold text-gray-800"><?= htmlspecialchars($row['nama_kegiatan']) ?></h3>
-                                 <h2 class="py-3 text-md font-semibold text-gray-800"><?= htmlspecialchars($row['nama_penyelenggara']) ?></h2>
-                                 <p class="py-1 text-sm text-gray-600"><?= htmlspecialchars($row['deskripsi_singkat']) ?></p>
-                                 <p class="text-sm text-gray-800"><?= htmlspecialchars($row['tanggal']) ?></p>
-                                 <p class="text-sm text-gray-500 mt-2">Tanggal Daftar: <?= htmlspecialchars($row['posted_at']) ?></p>
-                                 <p class="test-md text-white bg-red-500"<?= $row['status']?>>Kegiatan Ditolak</p>
-                                 <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Lihat Detail</button>
-                           </div>
-                        </div>
-                  <?php
-                        }
-                  } else {
-                        echo '<h3 class="text-gray-500 text-lg max-sm:text-lg mb-4">Belum ada kegiatan yang ditolak.</h3>';
-                  }
+                        include("includes/event_card_admin.php");
+                     }
                   ?>
+
                </div>
             </div>
          </div>

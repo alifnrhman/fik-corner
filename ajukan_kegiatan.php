@@ -8,17 +8,6 @@
    $title = "Dashboard Penyelenggara";
    include("includes/header.php");
    include("includes/functions.php");
-
-   // Mengambil data kegiatan yang menunggu verifikasi
-   $menunggu_verifikasi = get_data(
-      $connection,
-      "kegiatan.*, kategori_kegiatan.kategori",
-      "kegiatan",
-      "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori ",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Pending'",
-      "kegiatan.posted_at ASC"
-   );
-
 ?>
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">

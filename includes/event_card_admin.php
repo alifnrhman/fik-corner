@@ -1,5 +1,5 @@
 <?php 
-   echo 
+   echo "<a href='" . $url . "'>" . 
       "<div class='bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(0,0,0,0.3)] relative top-0 hover:-top-2 transition-all duration-300'>" .
          "<div class='w-full h-60 object-cover bg-gradient-to-b from-gray-800 via-transparent to-transparent absolute' /></div>" .
          "<div class='ms-6 mt-5 absolute'>" .
@@ -38,6 +38,12 @@
                   "<p class='text-gray-400 text-sm line-clamp-4 text-justify'>" . $data['deskripsi_singkat'] . "</p>" .
                " </div>" .
             "</div>" .
+            "<hr class='my-4' />" .
+            "<div class='flex gap-x-3 items-center'>" .
+               "<img src='" . $data['logo'] . "' alt='" . $data['nama_penyelenggara'] . "' class='w-6 h-6 rounded-full border border-gray-400 cursor-pointer' />" .
+               "<p class='text-gray-400 text-sm line-clamp-4'>" . $data['nama_penyelenggara'] . "</p>" .
+            "</div>" .
          "</div>" .
-      "</div>" ;
+      "</div>" .
+   "</a>";
 ?>

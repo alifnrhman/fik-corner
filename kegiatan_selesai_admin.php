@@ -1,21 +1,22 @@
 <?php
    session_start();
 
-   if(!isset($_SESSION['nama_penyelenggara'])) {
-      header('location: login_penyelenggara');
+   if(!isset($_SESSION['username'])) {
+      header('location: admin');
    }
    
-   $title = "Kegiatan Ditolak";
+   $title = "Kegiatan Selesai";
    include("includes/header.php");
    include("includes/functions.php");
 
-   // Mengambil data kegiatan yang ditolak
-   $kegiatan_ditolak = get_data(
+   // Mengambil data kegiatan selesai
+   $kegiatan_selesai = get_data(
       $connection,
-      "kegiatan.*, kategori_kegiatan.kategori",
+      "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo",
       "kegiatan",
-      "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori ",
-      "id_penyelenggara = '" . $_SESSION['id_penyelenggara'] . "' AND status = 'Ditolak'",
+      "LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori
+      LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara",
+      "status = 'Selesai'",
       "kegiatan.posted_at ASC"
    );
 
@@ -23,14 +24,14 @@
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
    <div class="flex items-start">
-      <?php include("includes/sidebar_penyelenggara.php") ?>
+      <?php include("includes/sidebar_admin.php") ?>
 
       <section class="main-content w-full px-8">
          <header class='z-50 bg-[#f7f6f9] sticky top-0 pt-8'>
             <div class='flex flex-wrap items-center w-full relative tracking-wide'>
                <div class='flex items-center gap-y-6 max-sm:flex-col z-50 w-full pb-2'>
                   <div class='flex items-center w-full px-4 bg-white shadow-sm min-h-[48px] sm:mr-20 rounded-md'>
-                     <h1 class="text-gray-600 text-md lg:text-lg font-semibold font-sans">Dashboard Penyelenggara
+                     <h1 class="text-gray-600 text-md lg:text-lg font-semibold font-sans">Dashboard Admin
                      </h1>
                   </div>
 
@@ -39,7 +40,7 @@
                      </div>
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
-                           <p class="text-gray-500 text-sm"><?= $_SESSION['nama_penyelenggara']; ?></p>
+                           <p class="text-gray-500 text-sm"><?= $_SESSION['nama']; ?></p>
                            <img src="assets\default_pfp.svg" alt="profile-pic"
                               class="w-[38px] h-[38px] rounded-full border-2 border-gray-300 cursor-pointer" />
                         </div>
@@ -77,15 +78,16 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
-                  Kegiatan Ditolak (<?= count($kegiatan_ditolak); ?>)
+                  Kegiatan Selesai (<?= count($kegiatan_selesai); ?>)
                </h2>
                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                   <?php 
-                     foreach ($kegiatan_ditolak as $data) {
+                     foreach ($kegiatan_selesai as $data) {
                         $biaya = is_null($data['biaya']) ? "Gratis" : "Berbayar";
                         $data['tanggal'] = format_tanggal($data['tanggal']);
+                        $url = "detail_kegiatan_admin.php?id=" . $data['id_kegiatan'];
 
-                        include("includes/event_card_penyelenggara.php");
+                        include("includes/event_card_admin.php");
                      }
                   ?>
 
