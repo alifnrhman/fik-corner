@@ -26,7 +26,8 @@
       </div>
 
       <div class='mt-5'>
-         <a href="" class="text-sm text-primary leading-relaxed text-justify font-semibold underline">Lihat Dokumen
+         <a href="lihat_dokumen_pendukung.php?id=<?= $data['id_penyelenggara']; ?>" target="_blank"
+            class="text-sm text-primary leading-relaxed text-justify font-semibold underline">Lihat Dokumen
             Pendukung</a>
       </div>
 
