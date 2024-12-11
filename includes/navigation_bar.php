@@ -73,7 +73,7 @@
 
       <div class='flex ml-auto max-lg:w-full'>
          <form action='search.php' method='post'
-            class='flex w-[500px] bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
+            class='flex w-[500px] lg:w-[400px] bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
             <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...' value=""
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class=" fill-gray-400">
