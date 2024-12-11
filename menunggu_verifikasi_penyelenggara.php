@@ -40,10 +40,14 @@
                      <div class="dropdown-menu relative flex shrink-0 group">
                         <div class="flex items-center gap-4">
                            <p class="text-gray-500 text-sm"><?= $_SESSION['nama_penyelenggara']; ?></p>
-                           <img src="assets\default_pfp.svg" alt="profile-pic"
-                              class="w-[38px] h-[38px] rounded-full border-2 border-gray-300 cursor-pointer" />
+                              <?php
+                                 if (isset($_SESSION['logo']) && !empty($_SESSION['logo'])) {
+                                       echo "<img src='" . $_SESSION['logo'] . "' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
+                                 } else {
+                                       echo "<img src='assets\default_pfp.svg' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
+                                 }
+                              ?>
                         </div>
-
                         <div
                            class="dropdown-content hidden group-hover:block shadow-md p-2 bg-white rounded-md absolute top-[38px] right-0 w-56">
                            <div class="w-full space-y-2">
