@@ -1,10 +1,10 @@
 // Toggle password visibility
 function togglePassword() {
-   var x = document.getElementById("password");
-   if (x.type === "password") {
-      x.type = "text";
+   var toggle = document.getElementById("password");
+   if (toggle.type === "password") {
+      toggle.type = "text";
    } else {
-      x.type = "password";
+      toggle.type = "password";
    }
 }
 
