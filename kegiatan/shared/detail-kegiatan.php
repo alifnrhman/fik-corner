@@ -98,7 +98,7 @@
                         </button>" .
                      "</a>";
             } else if ($data[0]['status'] == "Selesai") {
-               echo "<a href='/fik-corner/download_sertifikat.php' class='w-48 shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none'>
+               echo "<a href='/fik-corner/download_sertifikat.php' target='_blank' class='w-48 shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none'>
                         <i class='fa-solid fa-download text-white mr-1'></i>
                         Download Sertifikat
                      </a>";

@@ -26,7 +26,7 @@
       <span class='font-semibold text-xl'>Profil Saya</span>
    </div>
 
-   <form action="/fik-corner/profil/process_ubah_profil.php" method="post" enctype="multipart/form-data"
+   <form action="/fik-corner/profil/edit.php" method="post" enctype="multipart/form-data"
       class="max-w-full max-md:mx-auto w-screen lg:flex">
       <div class="container">
          <div class="items-center flex flex-col gap-y-5">

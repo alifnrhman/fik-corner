@@ -2,7 +2,7 @@
    session_start();
 
    if(!isset($_SESSION['nama_penyelenggara'])) {
-      header('location: login_penyelenggara');
+      header('location: /fik-corner/penyelenggara/login');
    }
    
    $title = "Kegiatan Ditolak";

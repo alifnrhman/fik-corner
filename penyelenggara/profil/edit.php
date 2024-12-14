@@ -56,9 +56,9 @@ if ($password_lama && $password_baru && $ulangi_password_baru) {
         exit();
     }
 
-    $sql = "SELECT password FROM users WHERE nim = ?";
+    $sql = "SELECT password FROM penyelenggara WHERE id_penyelenggara = ?";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("s", $_SESSION['nim']);
+    $stmt->bind_param("s", $_SESSION['id_penyelenggara']);
     $stmt->execute();
     $stmt->bind_result($hashed_password);
     $stmt->fetch();

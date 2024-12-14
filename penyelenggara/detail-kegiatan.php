@@ -1,5 +1,10 @@
 <?php
    session_start();
+
+   if(!isset($_SESSION['nama_penyelenggara'])) {
+      header('location: /fik-corner/penyelenggara/login');
+   }
+
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');
 
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
@@ -15,6 +20,12 @@
    // Mengambil data
    $data = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
 
+   if (count($data) == 0) {
+      echo "<script>
+         alert('Data tidak ditemukan');
+         window.location.href = '/fik-corner/penyelenggara/dashboard'; </script>";
+   }
+   
    $title = $data[0]['nama_kegiatan'];
 
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');

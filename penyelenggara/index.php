@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-   $title = "Beranda";
+   $title = "Pendaftaran Penyelenggara Kegiatan";
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/navigation_bar.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');

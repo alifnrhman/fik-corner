@@ -1,5 +1,7 @@
 <?php
    session_start();
+   
+   $title = "404 Not Found";
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/navigation_bar.php');
 ?>

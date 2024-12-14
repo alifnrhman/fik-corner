@@ -21,7 +21,9 @@
    $data = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
 
    if (count($data) == 0) {
-      header("Location: /fik-corner/404");
+      echo "<script>
+         alert('Data tidak ditemukan');
+         window.location.href = '/fik-corner/admin/dashboard'; </script>";
    }
 
    $title = $data[0]['nama_kegiatan'];
