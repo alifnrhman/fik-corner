@@ -3,7 +3,7 @@
       <div class="flex flex-wrap items-center sm:justify-between max-sm:flex-col gap-6">
          <!-- Logo -->
          <div class="grayscale">
-            <a href='index'><img src="assets\fik-corner-logo.png" alt="logo" class='w-44 ' /></a>
+            <a href='index'><img src="/fik-corner/assets/fik-corner-logo.png" alt="logo" class='w-44 ' /></a>
          </div>
          <!-- End of Logo -->
 
@@ -22,7 +22,5 @@
       <p class='text-center text-gray-500 text-base'>© FIK Corner. All rights reserved.</p>
    </div>
 </footer>
-<script src="https://kit.fontawesome.com/3102659666.js" crossorigin="anonymous"></script>
-<script src="js\scripts.js"></script>
 </body>
 </html>

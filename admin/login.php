@@ -1,30 +1,32 @@
 <?php
 	session_start();
+   setcookie("message", "");
 
-	if (isset($_SESSION['nim'])) {
-		header("location: index");
+	if (isset($_SESSION['username'])) {
+		header("location: /fik-corner/admin/dashboard.php");
 	}
 
-   $title = "Masuk";
+   $title = "Admin Login";
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/connection.php');
 ?>
 <main>
    <div class="font-[sans-serif] max-w-7xl mx-auto h-screen">
       <div class="grid md:grid-cols-2 items-center gap-8 h-full">
-         <form class="max-w-lg max-md:mx-auto w-full p-6" action="/fik-corner/auth/user/login.php" method="post">
+         <form class="max-w-lg max-md:mx-auto w-full p-6" action="/fik-corner/auth/admin/login.php" method="post">
             <div class="mb-8">
-               <h3 class="text-gray-800 text-4xl font-extrabold">Masuk</h3>
-               <p class="text-gray-800 text-sm mt-6">Masuk ke FIK Corner menggunakan NIM dan password SIAKAD anda.
+               <h3 class="text-gray-800 text-4xl font-extrabold">Admin Login</h3>
+               <p class="text-gray-800 text-sm mt-6">Masuk ke admin dashboard FIK Corner menggunakan username dan
+                  password anda.
                </p>
             </div>
 
             <div>
-               <label class="text-gray-800 text-[15px] mb-2 block">NIM</label>
+               <label class="text-gray-800 text-[15px] mb-2 block">Username</label>
                <div class="relative flex items-center">
-                  <input name="nim" type="text" required
+                  <input name="username" type="text" required
                      class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Masukkan NIM" />
+                     placeholder="Masukkan username" />
                </div>
             </div>
 
@@ -69,13 +71,11 @@
 
          <div
             class="h-full md:py-6 flex items-center relative max-md:before:hidden before:absolute before:bg-gradient-to-r before:from-gray-50 before:via-[#ff880041] before:to-[#ff6500] before:h-full before:w-full before:right-0 before:z-0">
-            <img src="assets\fik-corner-md.png" class="rounded-md lg:w-4/5 md:w-11/12 z-50 relative"
-               alt="Dining Experience" />
+            <img src="/fik-corner/assets/fik-corner-md.png" class="rounded-md lg:w-4/5 md:w-11/12 z-50 relative"
+               alt="FIK Corner" />
          </div>
       </div>
    </div>
 </main>
-
-<?php
-   include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/footer.php');
-?>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <header
    class='flex border-b py-4 px-6 sm:px-28 bg-white font-[sans-serif] min-h-[70px] tracking-wide z-50 fixed top-0 w-full'>
    <div class='flex flex-wrap items-center gap-5 w-full'>
-      <a href="index"><img src="assets\fik-corner-logo.png" alt="logo" class='h-7' />
+      <a href="/fik-corner/"><img src="/fik-corner/assets/fik-corner-logo.png" alt="FIK Corner" class='h-7' />
       </a>
 
       <div id="collapseMenu"
@@ -19,10 +19,10 @@
 
          <ul
             class='lg:!flex lg:gap-x-10 lg:ml-24 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
-            <li class='max-lg:border-b max-lg:py-2'><a href='index'
+            <li class='max-lg:border-b max-lg:py-2'><a href='/fik-corner/'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Beranda</a></li>
             <li class='group max-lg:border-b max-lg:py-2'>
-               <a href='javascript:void(0)'
+               <a href='/fik-corner/kegiatan/'
                   class='hover:text-primary hover:fill-primary text-gray-500 text-[15px] font-semibold block'>Kegiatan<svg
                      xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" class="ml-1 inline-block"
                      viewBox="0 0 24 24">
@@ -35,19 +35,19 @@
                   class='absolute hidden group-hover:block shadow-lg bg-white lg:gap-16 gap-8 px-6 pb-4 py-4 lg:top-12 top-28 left-50 w-80 z-50'>
                   <ul class='space-y-3'>
                      <li class='hover:bg-gray-100'>
-                        <a href='seminar'
+                        <a href='/fik-corner/kegiatan/seminar'
                            class='px-2 py-2 hover:text-primary hover:fill-primary text-gray-500 text-[15px] font-semibold block'>
                            Seminar
                         </a>
                      </li>
                      <li class='hover:bg-gray-100'>
-                        <a href='webinar'
+                        <a href='/fik-corner/kegiatan/webinar'
                            class='px-2 py-2 hover:text-primary hover:fill-primary text-gray-500 text-[15px] font-semibold block'>
                            Webinar
                         </a>
                      </li>
                      <li class='hover:bg-gray-100'>
-                        <a href='lomba'
+                        <a href='/fik-corner/kegiatan/lomba'
                            class='px-2 py-2 hover:text-primary hover:fill-primary text-gray-500 text-[15px] font-semibold block'>
                            Lomba
                         </a>
@@ -55,9 +55,9 @@
                   </ul>
                </div>
             </li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='berita'
+            <li class='max-lg:border-b max-lg:py-2'><a href='/fik-corner/berita'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Berita</a></li>
-            <li class='max-lg:border-b max-lg:py-2'><a href='penyelenggara.php'
+            <li class='max-lg:border-b max-lg:py-2'><a href='/fik-corner/penyelenggara'
                   class='hover:text-primary text-gray-500 text-[15px] font-semibold block'>Penyelenggara</a></li>
 
          </ul>
@@ -72,7 +72,7 @@
       </button>
 
       <div class='flex ml-auto max-lg:w-full'>
-         <form action='search.php' method='post'
+         <form action='/fik-corner/search.php' method='post'
             class='flex w-[500px] lg:w-[400px] bg-gray-100 px-6 py-3 rounded outline outline-transparent focus-within:outline-primary focus-within:bg-transparent'>
             <input type='text' name="search" placeholder='Cari seminar, webinar, lomba, atau penyelenggara...' value=""
                class='w-full text-sm bg-transparent rounded outline-none pr-2' />
@@ -84,32 +84,32 @@
          </form>
 
          <?php 
-         if (isset($_SESSION['nim'])) {
+         if (isset($_SESSION['nim']) ) {
             echo
             "<div class='flex flex-row items-center max-sm:ml-auto space-x-5 divide-x divide-solid'>" .
                "<div>" .
                   "<ul>" .
                      "<li class='group relative px-1 ms-10'>" .
                         "<div class='flex flex-row items-center justify-center gap-4 cursor-pointer'>" ;
-                           if (isset($_SESSION['foto']) && !empty($_SESSION['foto'])) {
-                              echo "<img src='" . $_SESSION['foto'] . "' class='w-8 h-8 rounded-full object-cover' />";
+                           if (isset($_SESSION['foto_mahasiswa']) && !empty($_SESSION['foto_mahasiswa'])) {
+                              echo "<img src='" . $_SESSION['foto_mahasiswa'] . "' class='w-8 h-8 rounded-full object-cover' />";
                            } else {
-                              echo "<img src='assets\default_pfp.svg' class='w-8 h-8 rounded-full object-cover' />";
+                              echo "<img src='/fik-corner/assets/default_pfp.svg' class='w-8 h-8 rounded-full object-cover' />";
                            }
                         echo
                            "<div>" .
-                              "<p class='text-sm text-gray-800 font-bold'>" . $_SESSION['nama'] . "</p>" .
+                              "<p class='text-sm text-gray-800 font-bold'>" . $_SESSION['nama_mahasiswa'] . "</p>" .
                               "<p class='text-xs text-gray-500'>" . $_SESSION['nim'] . "</p>" .
                            "</div>" .
                            "</div>" .
                               "<div class='bg-white z-20 shadow-md py-6 px-6 sm:min-w-[220px] max-sm:min-w-[220px] right-0 top-9 absolute hidden group-hover:block'>" .
                                  "<ul class='space-y-1.5'>" .
-                                    "<li><a href='profil' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
-                                    "<li><a href='kegiatan_saya' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Saya</a></li>" .
+                                    "<li><a href='/fik-corner/profil/' class='text-sm text-gray-500 hover:text-primary'>Profil Saya</a></li>" .
+                                    "<li><a href='/fik-corner/kegiatan-saya' class='text-sm text-gray-500 hover:text-primary'>Kegiatan Saya</a></li>" .
                                  "</ul>" .
                                  "<hr class='border-b-0 my-4' />" .
                                  "<ul class='space-y-1.5'>" .
-                                    "<li><a href='process_logout.php' class='text-sm text-gray-500 hover:text-primary'>
+                                    "<li><a href='/fik-corner/auth/user/logout.php' class='text-sm text-gray-500 hover:text-primary'>
                                     <i class='fa-solid fa-arrow-right-from-bracket'></i>
                                     Keluar</a>
                                     </li>" .
@@ -126,7 +126,7 @@
             echo "<div class='flex items-center ml-4'>"
             . "<button
                class='px-4 py-2 text-[15px] rounded font-semibold text-primary border-2 border-primary hover:bg-primary transition-all ease-in-out duration-300 bg-transparent hover:text-white'>
-               <a href='login'>Masuk</a>
+               <a href='/fik-corner/login'>Masuk</a>
                </button>"
             . "</div>";
          }

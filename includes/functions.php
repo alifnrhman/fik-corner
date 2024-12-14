@@ -1,6 +1,6 @@
 <?php
-
-include("connection.php");
+include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/connection.php');
+date_default_timezone_set("Asia/Bangkok");
 
 // Fungsi untuk mengambil data dari database
 function get_data($connection, $columns = '*', $table, $join = '', $where = '', $orderBy = '', $limit = '') {
@@ -36,6 +36,25 @@ function get_data($connection, $columns = '*', $table, $join = '', $where = '', 
             if (isset($row['logo']) && !empty($row['logo'])) {
                 $row['logo'] = 'data:image/jpeg;base64,' . base64_encode($row['logo']);
             }
+            
+            if (isset($row['tanggal']) && !empty($row['tanggal'])) {
+                $row['tanggal'] = format_tanggal($row['tanggal']);
+            }
+            
+            if (isset($row['biaya']) && !empty($row['biaya'])) {
+                $row['biaya'] = "Rp" . number_format($row['biaya'], 2, ',', '.');
+            } else {
+                $row['biaya'] = "Gratis";
+            }
+
+            if (isset($row['waktu']) && !empty($row['waktu'])) {
+                $row['waktu'] = date("H:i", strtotime($row['waktu']));
+            }
+
+            if (isset($row['posted_at']) && !empty($row['posted_at'])) {
+                $row['posted_at'] = date("d/m/Y H:i", strtotime($row['posted_at']));
+            }
+            
             $data[] = $row;
         }
         return $data;

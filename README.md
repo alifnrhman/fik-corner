@@ -8,7 +8,6 @@ A website for UPNVJ's Computer Science Faculty students to view and participate 
 -  Tailwind CSS
 -  MySQL
 
-## Changelogs
+### Libraries
 
--  v1.0 (28/11/2024)
-   -  First commit
+-  Material Tailwind

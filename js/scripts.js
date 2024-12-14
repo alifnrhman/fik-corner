@@ -20,8 +20,14 @@ function handleClick() {
       collapseMenu.style.display = "block";
    }
 }
-toggleOpen.addEventListener("click", handleClick);
-toggleClose.addEventListener("click", handleClick);
+
+toggleOpen?.addEventListener("click", handleClick);
+toggleClose?.addEventListener("click", handleClick);
+
+// Preview foto saat diedit
+function preview(event) {
+   fotoMahasiswa.src = URL.createObjectURL(event.target.files[0]);
+}
 
 // Enable edit di form
 function edit() {
