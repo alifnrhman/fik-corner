@@ -1,6 +1,7 @@
 <?php 
 include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/connection.php');
 
+// Ambil id dan action dari parameter
 $id_penyelenggara = $_GET['id'];
 $action = $_GET['action'];
 
