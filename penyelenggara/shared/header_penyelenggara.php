@@ -21,8 +21,9 @@
                   ?>
                </div>
 
+               
                <div
-                  class="dropdown-content hidden group-hover:block shadow-md p-2 bg-white rounded-md absolute top-[38px] right-0 w-56">
+                  class="dropdown-content hidden group-hover:block shadow-md p-2 bg-white rounded-md absolute top-[38px] mt-2 right-0 w-56">
                   <div class="w-full space-y-2">
                      <a href="/fik-corner/penyelenggara/profil"
                         class="text-sm text-gray-800 cursor-pointer flex items-center p-2 rounded-md hover:bg-secondary dropdown-item transition duration-300 ease-in-out">
