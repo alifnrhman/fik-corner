@@ -24,20 +24,20 @@
                </h2>
                <div>
                   <form class="max-w-full max-md:mx-auto w-full px-24" action="process_tambah_berita.php" method="post"
-                     enctype="multipart/form-data">
+                     enctype="multipart/form-data"> <!--Form untuk input berita yang akan disunting-->
                      <div class="flex flex-row gap-4">
                         <div class="basis-3/5">
                            <label class="text-gray-800 text-[15px] mb-2 block">Judul Berita</label>
                            <input name="judul_berita" type="text" required
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300"
-                              placeholder="Masukkan judul berita" maxlength="100" />
+                              placeholder="Masukkan judul berita" maxlength="100" /> <!--Require judul berita-->
                         </div>
 
                         <div class="basis-2/5">
                            <label class="text-gray-800 text-[15px] mb-2 block">Kategori Berita</label>
                            <select name="kategori"
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300"
-                              required>
+                              required> <!--Require Kategori berita dengan option kegiatan, prestasi, dan berita fakultas-->
                               <option value="" selected disabled>-- Pilih Kategori Berita --</option>
                               <option value="Kegiatan">Kegiatan</option>
                               <option value="Prestasi Mahasiswa">Prestasi Mahasiswa</option>
@@ -51,7 +51,7 @@
                            <label class="text-gray-800 text-[15px] mb-2 block">Deskripsi</label>
                            <textarea name="deskripsi" rows="5"
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300 resize-y"
-                              placeholder="Masukkan deskripsi" required></textarea>
+                              placeholder="Masukkan deskripsi" required></textarea> <!--Require Deskripsi menggunakan text area agar lebih mudah adjust text area-->
                         </div>
                      </div>
 
@@ -60,7 +60,7 @@
                            <label class="text-gray-800 text-[15px] mb-2 block">Foto</label>
                            <input type="file" name="foto" id="foto" required
                               class="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-white file:hover:bg-gray-200 file:text-gray-500 rounded"
-                              accept=".png, .jpg, .jpeg" />
+                              accept=".png, .jpg, .jpeg" /> <!--Require Foto dengan maks file 10MB-->
                            <p class="text-xs text-gray-400 mt-2">Format PNG, JPG, atau JPEG (maks. 10MB).</p>
                         </div>
                      </div>
@@ -69,11 +69,11 @@
                         <button type="reset"
                            class="py-3 px-10 text-sm tracking-wide font-semibold rounded-md text-primary bg-[#f7f6f9] hover:bg-primaryHover hover:text-white focus:outline-none transition-all duration-300 border-2 border-primary">
                            Reset
-                        </button>
+                        </button> <!--Tombol reset untuk mereset form-->
                         <button type="submit"
                            class="shadow-md py-3 px-10 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none">
                            Publish Berita
-                        </button>
+                        </button> <!--Tombol submit berita untuk menyunting-->
                      </div>
                   </form>
                </div>

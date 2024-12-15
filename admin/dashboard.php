@@ -57,43 +57,43 @@
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
    <div class="flex items-start">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/sidebar.php'); ?>
+      <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/sidebar.php'); ?> <!--Untuk menampilkan sidebar admin-->
 
       <section class="main-content w-full px-8">
-         <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/header_admin.php'); ?>
+         <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/header_admin.php'); ?>  <!--Untuk menampilkan header admin-->
 
-         <div class="bg-gray-100 pt-5 font-sans">
+         <div class="bg-gray-100 pt-5 font-sans"> <!--Kotak untuk Statistik-->
             <div class="max-w-full max-sm:max-w-sm">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">Statistik</h2>
                <div class="grid md:grid-cols-5 sm:grid-cols-2 gap-10">
-                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
-                     <p class="text-gray-400 text-base font-semibold mb-1">Penyelenggara Menunggu Verifikasi</p>
+                  <div class="bg-white rounded-md border px-7 py-8 flex flex-col"> <!--Kotak untuk kolom P. Menunggu Verifikasi-->
+                     <p class="text-gray-400 text-base font-semibold mb-1">Penyelenggara Menunggu Verifikasi</p> 
                      <h3 class="text-primary text-3xl font-extrabold mt-auto">
-                        <?= count($penyelenggara_pending); ?>
+                        <?= count($penyelenggara_pending); ?> <!--Menghitung berapa banyak penyelenggara yang berstatus pending-->
                      </h3>
                   </div>
                   <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Menunggu Verifikasi</p>
                      <h3 class="text-primary text-3xl font-extrabold mt-auto">
-                        <?= count($kegiatan_pending); ?>
+                        <?= count($kegiatan_pending); ?> <!--Menghitung berapa banyak kegiatan yang berstatus pending-->
                      </h3>
                   </div>
                   <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Aktif</p>
                      <h3 class="text-primary text-3xl font-extrabold mt-auto">
-                        <?= count($kegiatan_aktif); ?>
+                        <?= count($kegiatan_aktif); ?> <!--Menghitung berapa banyak kegiatan yang berstatus aktif-->
                      </h3>
                   </div>
                   <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Selesai</p>
                      <h3 class="text-primary text-3xl font-extrabold mt-auto">
-                        <?= count($kegiatan_selesai); ?>
+                        <?= count($kegiatan_selesai); ?> <!--Menghitung berapa banyak kegiatan yang berstatus selesai-->
                      </h3>
                   </div>
                   <div class="bg-white rounded-md border px-7 py-8 flex flex-col">
                      <p class="text-gray-400 text-base font-semibold mb-1">Kegiatan Ditolak</p>
                      <h3 class="text-primary text-3xl font-extrabold mt-auto">
-                        <?= count($kegiatan_ditolak); ?>
+                        <?= count($kegiatan_ditolak); ?> <!--Menghitung berapa banyak kegiatan yang ditolak-->
                      </h3>
                   </div>
                </div>

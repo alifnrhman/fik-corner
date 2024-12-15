@@ -41,7 +41,7 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
                <div class="mt-8 mb-5 flex items-center gap-x-3">
-                  <a href='<?php echo $_SERVER['HTTP_REFERER'] ?>'>
+                  <a href='<?php echo $_SERVER['HTTP_REFERER'] ?>'> <!--HTTP_REFERER berfungsi untuk mengembalikan ke halaman sebelumnya sebelum masuk ke halaman ini-->
                      <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
                   </a>
                   <h1 class="font-bold text-xl">Kembali</h1>
