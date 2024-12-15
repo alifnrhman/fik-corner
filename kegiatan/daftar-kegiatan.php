@@ -16,15 +16,15 @@
       LEFT JOIN kategori_kegiatan ON kegiatan.id_kategori = kategori_kegiatan.id_kategori 
       LEFT JOIN penyelenggara ON kegiatan.id_penyelenggara = penyelenggara.id_penyelenggara
    ";
-   $where = "status = 'Aktif' AND id_kegiatan = " . $_GET['id'];
+   $where = "status = 'Aktif' AND id_kegiatan = " . $_GET['id']; // Memfilter event yang statusnya 'Aktif' dan berdasarkan ID yang diberikan
    $orderBy = "";
    $limit = "";
 
    // Mengambil data event
    $dataEvent = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
 
-   if (count($dataEvent) == 0) {
-      header("Location: /fik-corner/404");
+   if (count($dataEvent) == 0) { //Mengecek apakah data event ditemukan atau tidak 
+      header("Location: /fik-corner/404"); //Jika tidak ada maka akan diarahkan ke halaman 404
    }
 
    // Query data mahasiswa
@@ -33,7 +33,8 @@
    $join = "
       LEFT JOIN mahasiswa ON users.nim = mahasiswa.nim 
    ";
-   $where = "users.nim = " . $_SESSION['nim'];
+   $where = "users.nim = " . $_SESSION['nim']; //Memfilter data berdasarkan NIM yang ada di session
+   $orderBy = "";
    $orderBy = "";
    $limit = "";
 
@@ -52,8 +53,10 @@
       </a>
       <h1 class="font-bold text-xl">Kembali</h1>
    </div>
+   <!-- Menampilkan kategori event dan form untuk daftar -->
    <p class="font-bold text-2xl">Daftar <?= $dataEvent[0]['kategori']; ?></p>
    <?php 
+            //Menampilkan form pendaftaran mahasiswa untuk event yang dipilih
             echo
                "<div class='flex lg:flex'>" .
                      "<div class='mr-10 w-7/12'>" .
@@ -82,6 +85,7 @@
                               "<input name='nomor_telepon' id='nomor_telepon' type='text' disabled class='w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600' value='" . $dataMahasiswa[0]['nomor_telepon'] . "'/>" .
                            "</div>" .
                         "</div>";
+         //Jika event gratis, tampilkan tombol untuk mendaftar
          if ($dataEvent[0]['biaya'] == "Gratis") {
                   echo  "<a href='/fik-corner/kegiatan/process_daftar_kegiatan.php?id=" . $_GET['id'] . "'>" .
                            "<button type='submit'
@@ -90,6 +94,7 @@
                            </button>" .
                         "</a>";
          } else {
+         //Jika event berbayar, tampilkan total bayar dan tombol untuk melakukan pembayaran
                   echo  
                         "<div class='flex flex-col mt-8 gap-y-4'>" .
                            "<div class=''>" .
