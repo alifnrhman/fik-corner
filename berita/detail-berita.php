@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-$title = "Detail Berita";
-include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/navigation_bar.php');
 
 // Periksa apakah parameter id tersedia di URL
 if (isset($_GET['id'])) {
@@ -24,8 +20,8 @@ if (isset($_GET['id'])) {
 
     // Periksa apakah data ditemukan
     if (empty($news)) {
-        echo "<p>Berita tidak ditemukan.</p>";
-        exit;
+         header("location: /fik-corner/404");
+         exit;
     }
 
     $news = $news[0]; // Ambil data berita yang ditemukan
@@ -35,10 +31,15 @@ if (isset($_GET['id'])) {
    $query = "UPDATE berita SET views = $views WHERE id_berita = $id_berita";
    $connection->query($query);
    
+   $title = $news['judul_berita'];
+   include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
+   include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/navigation_bar.php');
+
 } else {
-    echo "<p>Parameter ID tidak valid.</p>";
-    exit;
+    header("location: /fik-corner/404");
 }
+
+
 ?>
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
