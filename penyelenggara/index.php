@@ -119,6 +119,7 @@
                </div>
             </div>
             <?php 
+               // Jika terdapat error saat mengunggah logo, maka tampilkan pesan error
                if (isset($_COOKIE['error_daftar_penyelenggara'])) {
                   echo "<p class='text-red-500 font-semibold text-sm'>" . $_COOKIE['error_daftar_penyelenggara'] . "</p>";
                }

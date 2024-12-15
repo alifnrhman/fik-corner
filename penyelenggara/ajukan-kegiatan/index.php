@@ -1,6 +1,7 @@
 <?php
    session_start();
 
+   // Validasi login
    if(!isset($_SESSION['nama_penyelenggara'])) {
       header('location: /fik-corner/penyelenggara/login');
    }
@@ -12,9 +13,11 @@
 
 <div class="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
    <div class="flex items-start">
+      <!-- Include sidebar -->
       <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/penyelenggara/shared/sidebar.php') ?>
 
       <section class="main-content w-full px-8">
+         <!-- Include header penyelenggara -->
          <?php include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/penyelenggara/shared/header_penyelenggara.php') ?>
 
          <div class="bg-gray-100 pt-5 font-sans">
@@ -101,9 +104,10 @@
                               accept=".png, .jpg, .jpeg" />
                            <p class="text-xs text-gray-400 mt-2">Format PNG, JPG, atau JPEG (maks. 10MB).</p>
                            <?php 
-                           if (isset($_COOKIE['error'])) {
-                              echo "<p class='text-primary font-semibold text-sm'>" . $_COOKIE['error'] . "</p>";
-                           }
+                              // Tampilkan pesan dari cookie error jika ada
+                              if (isset($_COOKIE['error'])) {
+                                 echo "<p class='text-primary font-semibold text-sm'>" . $_COOKIE['error'] . "</p>";
+                              }
                            ?>
                         </div>
                      </div>

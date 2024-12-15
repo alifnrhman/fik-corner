@@ -13,15 +13,17 @@
                <div class="flex items-center gap-4">
                   <p class="text-gray-500 text-sm"><?= $_SESSION['nama_penyelenggara']; ?></p>
                   <?php
+                     // Jika penyelenggara memiliki logo, maka tampilkan logo penyelenggara
                      if (isset($_SESSION['logo_penyelenggara']) && !empty($_SESSION['logo_penyelenggara'])) {
                         echo "<img src='" . $_SESSION['logo_penyelenggara'] . "' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
                      } else {
+                        // Jika penyelenggara tidak memiliki logo, maka tampilkan default logo
                         echo "<img src='/fik-corner/assets/default_pfp.svg' class='w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer' />";
                      }
                   ?>
                </div>
 
-
+               <!-- Dropdown profil -->
                <div
                   class="dropdown-content hidden group-hover:block shadow-md p-2 bg-white rounded-md absolute top-[38px] right-0 w-56">
                   <div class="w-full space-y-2">

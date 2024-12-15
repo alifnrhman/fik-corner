@@ -1,12 +1,14 @@
 <?php
    session_start();
 
+   // Validasi status login
    if(!isset($_SESSION['nama_penyelenggara'])) {
       header('location: /fik-corner/penyelenggara/login');
    }
 
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');
 
+   // Query untuk ambil data kegiatan
    $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
    $table = "kegiatan";
    $join = "
@@ -20,6 +22,7 @@
    // Mengambil data
    $data = get_data($connection, $columns, $table, $join, $where, $orderBy, $limit);
 
+   // Jika data tidak ditemukan, maka redirect ke halaman 404
    if (count($data) == 0) {
       echo "<script>
          alert('Data tidak ditemukan');

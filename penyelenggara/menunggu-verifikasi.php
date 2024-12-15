@@ -9,7 +9,7 @@
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');
 
-   // Mengambil data kegiatan yang menunggu verifikasi
+   // Query untuk ambil data kegiatan yang menunggu verifikasi
    $menunggu_verifikasi = get_data(
       $connection,
       "kegiatan.*, kategori_kegiatan.kategori",

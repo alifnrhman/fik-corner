@@ -2,6 +2,7 @@
 	session_start();
    setcookie("message", "");
 
+   // Validasi status login
 	if (isset($_SESSION['nama_penyelenggara'])) {
 		header("location: /fik-corner/penyelenggara/dashboard");
 	}
@@ -26,7 +27,7 @@
                <label class="text-gray-800 text-[15px] mb-2 block">Email</label>
                <div class="relative flex items-center">
                   <input name="email" type="email" required
-                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                      placeholder="Masukkan email" />
                </div>
             </div>
@@ -35,7 +36,7 @@
                <label class="text-gray-800 text-[15px] mb-2 block">Password</label>
                <div class="relative flex items-center">
                   <input name="password" id="password" type="password" required
-                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                      placeholder="Masukkan password" />
                   <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
                      class="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128" id="togglePassword"
@@ -46,6 +47,7 @@
                   </svg>
                </div>
                <?php
+                     // Jika terdapat pesan error saat login, tampilkan pesan error
 							if (isset($_COOKIE['message'])) {
 								echo "<p class='mt-4 font-semibold text-primary'>" . $_COOKIE['message'] . "</p>";
 							}
@@ -55,7 +57,7 @@
             <div class="flex flex-wrap items-center gap-4 justify-between mt-4">
                <div class="flex items-center">
                   <input id="remember-me" name="remember-me" type="checkbox"
-                     class="shrink-0 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md" />
+                     class="shrink-0 h-4 w-4 text-primary focus:ring-blue-500 border-gray-300 rounded-md" />
                   <label for="remember-me" class="ml-3 block text-sm text-gray-800">
                      Ingat saya
                   </label>

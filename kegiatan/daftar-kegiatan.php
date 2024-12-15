@@ -48,7 +48,13 @@
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <div class="mt-8 mb-5 flex items-center gap-x-3">
-      <a href='<?php echo $_SERVER['HTTP_REFERER']?>'>
+      <a href='<?php if (strpos($_SERVER['HTTP_REFERER'], 'detail-kegiatan')) {
+         echo $_SERVER['HTTP_REFERER'];
+      } else if (strpos($_SERVER['HTTP_REFERER'], 'kegiatan-saya')) {
+         echo '/fik-corner/kegiatan-saya';
+      } else if (strpos($_SERVER['HTTP_REFERER'], 'pembayaran')) {
+         echo '/fik-corner/kegiatan/' . strtolower($dataEvent[0]['kategori']) . '/detail-kegiatan.php?id=' . $_GET['id'];
+      } ?>'>
          <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
       </a>
       <h1 class="font-bold text-xl">Kembali</h1>

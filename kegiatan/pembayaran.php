@@ -96,7 +96,7 @@
       </div>
       <div>
          <!-- Link untuk mengarahkan kembali ke halaman kegiatan untuk membatalkan pembayaran -->
-         <a href='/fik-corner/kegiatan/daftar_kegiatan.php?id=<?= $_GET['id'] ?>'>
+         <a href='/fik-corner/kegiatan/daftar-kegiatan.php?id=<?= $_GET['id'] ?>'>
             <button type='submit'
                class='w-4/12 mt-5 shadow-md py-3 px-6 text-sm tracking-wide font-semibold rounded-md text-primary bg-white hover:bg-primaryHover hover:text-white border border-primary focus:outline-none transition-all duration-300'>
                Batalkan Pembayaran

@@ -19,7 +19,7 @@
 
    <div class='max-w-auto'>
       <div class="font-sans">
-          <!-- Tab untuk memilih kategori kegiatan: Semua, Belum Selesai, Sudah Selesai -->
+         <!-- Tab untuk memilih kategori kegiatan: Semua, Belum Selesai, Sudah Selesai -->
          <ul class="flex w-max border divide-x rounded overflow-hidden">
             <li id="semuaTab"
                class="tab text-white font-bold text-center bg-primary text-[15px] py-2 px-8 cursor-pointer transition-all">
@@ -94,6 +94,8 @@
             <div
                class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-3 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
                <?php 
+
+               // Query untuk ambil data kegiatan yang sudah selesai
                $columns = "mhs_riwayat_kegiatan.*, kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "

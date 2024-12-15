@@ -1,4 +1,5 @@
-<?php // PHP untuk mencetak event card dalam halaman Admin
+<?php
+   // Set URL ketika card diklik
    $url = "/fik-corner/admin/detail-kegiatan.php?id=" . $data['id_kegiatan'];
 
    echo "<a href='" . $url . "'>" . 
@@ -26,7 +27,8 @@
                      "<i class='fa-solid fa-location-dot fa-sm'></i>" .
                      "<p class='ps-2 text-gray-700 text-sm font-medium inline-block truncate align-text-bottom w-full'>" . $data['lokasi'] . "</p>" .
                   "</div>";
-         if ($data['jumlah_peserta'] > 0) {
+         // Jika status kegiatan bukan pending, maka tampilkan jumlah peserta
+         if ($data['status'] !== 'Pending') {
             echo  "<div>" .
                      "<i class='fa-solid fa-user-group fa-sm'></i>" .
                      "<span class='ps-2 text-gray-700 text-sm font-medium cursor-pointer inline-block'>" . $data['jumlah_peserta'] . " peserta" . "</span>" .

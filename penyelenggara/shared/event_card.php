@@ -21,6 +21,7 @@
                "<div class='h-14'>" .
                   "<h3 class='text-xl font-bold text-gray-800 line-clamp-2'>" . $data['nama_kegiatan'] . "</h3>" .
                "</div>";
+         // Jika status kegiatan tidak pending, maka tampikan lokasi dan jumlah peserta
          if ($data['status'] !== 'Pending') {
             echo  
                "<div class='flex justify-between mt-3 max-h-5 line-clamp-1 truncate'>" .
@@ -32,6 +33,7 @@
                      "<i class='fa-solid fa-user-group fa-sm'></i>" .
                      "<span class='ps-2 text-gray-700 text-sm font-medium cursor-pointer inline-block'>" . $data['jumlah_peserta'] . " peserta" . "</span>" .
                   "</div>";
+         // Jika status kegiatan pending, maka tampikan tanggal diajukan
          } else {
             echo
                "<div class='flex justify-between mt-3'>" .

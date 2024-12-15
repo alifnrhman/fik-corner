@@ -28,12 +28,14 @@
 
 <main class="w-full h-full pt-20 lg:px-28 md:px-14 sm:px-6 flex-grow">
    <div class="mt-8 mb-5 flex items-center gap-x-3">
-      <a href='<?php if ($_SERVER['HTTP_REFERER'] == 'daftar-kegiatan.php') {
-         echo $_SERVER['HTTP_REFERER'];
-      } else if ($_SERVER['HTTP_REFERER'] == 'kegiatan-saya.php') {
+      <a href='<?php if (strpos($_SERVER['HTTP_REFERER'], 'daftar-kegiatan')) {
+         echo '/fik-corner/kegiatan/' . strtolower($data[0]['kategori']);
+      } else if (strpos($_SERVER['HTTP_REFERER'], 'kegiatan-saya')) {
          echo '/fik-corner/kegiatan-saya';
+      } else if (strpos($_SERVER['HTTP_REFERER'], 'pembayaran')) {
+         echo '/fik-corner/kegiatan/' . strtolower($data[0]['kategori']) . '/detail-kegiatan.php?id=' . $_GET['id'];
       } else {
-         echo '/fik-corner/kegiatan';
+         echo $_SERVER['HTTP_REFERER'];
       } ?>'>
          <i class='fa-solid fa-arrow-left-long fa-lg cursor-pointer'></i>
       </a>

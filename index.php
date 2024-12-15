@@ -52,6 +52,7 @@
          <div
             class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
             <?php 
+               // Query untuk mengambil data seminar terbaru
                $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "
@@ -85,6 +86,7 @@
          <div
             class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
             <?php 
+               // Query untuk mengambil data webinar terbaru
                $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "
@@ -118,6 +120,7 @@
          <div
             class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 max-lg:max-w-3xl max-md:max-w-md mx-auto '>
             <?php 
+               // Query untuk mengambil data lomba terbaru
                $columns = "kegiatan.*, kategori_kegiatan.kategori, penyelenggara.nama_penyelenggara, penyelenggara.logo";
                $table = "kegiatan";
                $join = "

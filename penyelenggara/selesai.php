@@ -1,6 +1,7 @@
 <?php
    session_start();
 
+   // Validasi status login
    if(!isset($_SESSION['nama_penyelenggara'])) {
       header('location: /fik-corner/penyelenggara/login');
    }
@@ -9,7 +10,7 @@
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/functions.php');
 
-   // Mengambil data kegiatan terverifikasi
+   // Query untuk ambil data kegiatan terverifikasi
    $kegiatan_selesai = get_data(
       $connection,
       "kegiatan.*, kategori_kegiatan.kategori",

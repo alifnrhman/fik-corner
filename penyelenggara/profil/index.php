@@ -9,6 +9,7 @@
    include($_SERVER["DOCUMENT_ROOT"] . "/fik-corner/includes/header.php");
    include($_SERVER["DOCUMENT_ROOT"] . "/fik-corner/includes/functions.php");
 
+   // Query untuk ambil data penyelenggara
    $columns = "*";
    $table = "penyelenggara";
    $join = "";
@@ -41,14 +42,17 @@
                      <div class="items-center flex flex-col gap-y-5">
                         <div class="w-full rounded-full mb-5">
                            <?php
+                           // Jika penyelenggara memiliki logo, maka tampilkan logo
                               if (isset($_SESSION['logo_penyelenggara']) && !empty($_SESSION['logo_penyelenggara'])) {
                                  echo "<img id='logoPenyelenggara' src='" . $_SESSION['logo_penyelenggara'] . "' class='w-60 h-60 rounded-full object-cover mx-auto' />";
+                              // Jika tidak ada, tampilkan logo default
                               } else {
                                  echo "<img id='logoPenyelenggara' src='assets\default_pfp.svg' class='w-60 h-60 rounded-full object-cover mx-auto' />";
                               }
                            ?>
                         </div>
                         <?php 
+                           // Jika ada error saat upload logo, tampilkan pesan error
                            if (isset($_COOKIE['error_profil'])) {
                               echo "<p class='text-red-500 font-semibold text-sm'>" . $_COOKIE['error_profil'] . "</p>";
                            }

@@ -19,7 +19,7 @@ if ($result->num_rows == 0) {
     //Jika mahasiswa belum terdaftar dalam kegiatan, maka mamsukkan data pendaftaran mahasiswa ke dalam tabel mhs_kegiatan 
     $sql1 = "INSERT INTO mhs_kegiatan (nim, id_kegiatan) VALUES (?, ?)";
     $stmt1 = $connection->prepare($sql1);
-    $stmt1->bind_param("ss", $nim, $id_kegiatan); //Mengikat parameter dengan tipe data string (ss)
+    $stmt1->bind_param("ss", $nim, $id_kegiatan);
     $stmt1->execute();
 
     //Mengecek apakah data berhasil dimasukkan 
@@ -27,7 +27,7 @@ if ($result->num_rows == 0) {
         //Jika berhasil, update jumlah peserta pada tabel kegiatan 
         $sql2 = "UPDATE kegiatan SET jumlah_peserta = jumlah_peserta + 1 WHERE id_kegiatan = ?";
         $stmt2 = $connection->prepare($sql2);
-        $stmt2->bind_param("i", $id_kegiatan); //Mengambil parameter dengan tipe data integer (i)
+        $stmt2->bind_param("i", $id_kegiatan);
         $stmt2->execute();
 
         //Mengecek apakah update jumlah peserta berhasil 
@@ -44,7 +44,6 @@ if ($result->num_rows == 0) {
                 window.location.href = '/fik-corner/kegiatan';
             </script>";
         }
-        //Menutup statement2 setelah selesai digunakan 
         $stmt2->close();
     } else {
         //Jika gagal memasukkan data pendaftaran mahasiswa, tampilkan pesan error 
@@ -53,7 +52,6 @@ if ($result->num_rows == 0) {
             window.location.href = '/fik-corner/kegiatan';
         </script>";
     }
-    //Menutup statement1 setelah selesai digunakan 
     $stmt1->close();
 } else {
     //Jika mahasiswa sudah terdaftar pada kegiatan ini, tampilkan pesan bahwa mereka sudah terdaftar di kegiatan tersebut
@@ -62,6 +60,6 @@ if ($result->num_rows == 0) {
             window.location.href = '/fik-corner/kegiatan';
         </script>";
 }
-$stmt->close(); //Menutup statement setelah selesai digunakan 
-$connection->close(); //Menutup koneksi database setelah semua proses selesai 
+$stmt->close();
+$connection->close();
 ?>

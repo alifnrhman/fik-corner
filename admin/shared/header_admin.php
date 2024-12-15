@@ -1,4 +1,4 @@
-<!--Untuk menampilkan header pada halaman admin-->
+<!-- Untuk menampilkan header pada halaman admin -->
 <header class='z-50 bg-[#f7f6f9] top-0 pt-8'>
    <div class='flex flex-wrap items-center w-full relative tracking-wide'>
       <div class='flex items-center gap-y-6 max-sm:flex-col z-50 w-full pb-2'>
@@ -12,7 +12,8 @@
             </div>
             <div class="dropdown-menu relative flex shrink-0 group">
                <div class="flex items-center gap-4">
-                  <p class="text-gray-500 text-sm"><?= $_SESSION['nama_admin']; ?></p> <!--Menampilkan session dengan nama admin-->
+                  <p class="text-gray-500 text-sm"><?= $_SESSION['nama_admin']; ?></p>
+                  <!--Menampilkan session dengan nama admin-->
                   <img src="/fik-corner/assets/default_pfp.svg"
                      class="w-9 h-9 rounded-full object-cover mx-auto border border-gray-500 cursor-pointer" />
                </div>

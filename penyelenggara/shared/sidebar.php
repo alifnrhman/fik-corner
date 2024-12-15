@@ -8,6 +8,7 @@
       </div>
 
       <div class="py-6 px-6">
+         <!-- Tombol ajukan kegiatan -->
          <div class="flex justify-center mb-5">
             <a href="ajukan-kegiatan"
                class="inline-block w-full shadow-md py-3 px-4 text-sm tracking-wide font-semibold rounded-md text-white bg-primary hover:bg-primaryHover focus:outline-none">
@@ -15,6 +16,7 @@
                Ajukan Kegiatan
             </a>
          </div>
+         <!-- Navigasi -->
          <ul class="space-y-2">
             <li>
                <a href="/fik-corner/penyelenggara/dashboard"
@@ -101,6 +103,7 @@
    </div>
 </nav>
 
+<!-- Tombol toggle sidebar (mobile) -->
 <button id="toggle-sidebar"
    class='lg:hidden w-8 h-8 z-[100] fixed top-[36px] left-[10px] cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full outline-none transition-all duration-500'>
    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" class="w-3 h-3" viewBox="0 0 55.752 55.752">

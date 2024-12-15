@@ -25,7 +25,7 @@
                <label class="text-gray-800 text-[15px] mb-2 block">NIM</label>
                <div class="relative flex items-center">
                   <input name="nim" type="text" required
-                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                      placeholder="Masukkan NIM" />
                </div>
             </div>
@@ -35,7 +35,7 @@
                <label class="text-gray-800 text-[15px] mb-2 block">Password</label>
                <div class="relative flex items-center">
                   <input name="password" id="password" type="password" required
-                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
+                     class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-primary"
                      placeholder="Masukkan password" />
                   <!-- Icon untuk toggle visibilitas password -->
                   <svg xmlns="http://www.w3.org/2000/svg" fill="//bbb" stroke="//bbb"
@@ -53,18 +53,18 @@
 							}
 						?>
             </div>
-            
+
             <!-- Checkbox untuk ingat pengguna -->
             <div class="flex flex-wrap items-center gap-4 justify-between mt-4">
                <div class="flex items-center">
                   <input id="remember-me" name="remember-me" type="checkbox"
-                     class="shrink-0 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md" />
+                     class="shrink-0 h-4 w-4 text-primary focus:ring-blue-500 border-gray-300 rounded-md" />
                   <label for="remember-me" class="ml-3 block text-sm text-gray-800">
                      Ingat saya
                   </label>
                </div>
             </div>
-            
+
             <!-- Tombol Login -->
             <div class="mt-8">
                <button type="submit"
@@ -73,7 +73,7 @@
                </button>
             </div>
          </form>
-         
+
          <!-- Gambar tampilan untuk mempercantik halaman -->
          <div
             class="h-full md:py-6 flex items-center relative max-md:before:hidden before:absolute before:bg-gradient-to-r before:from-gray-50 before:via-[//ff880041] before:to-[//ff6500] before:h-full before:w-full before:right-0 before:z-0">
