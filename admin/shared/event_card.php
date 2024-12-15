@@ -1,4 +1,4 @@
-<?php 
+<?php // PHP untuk mencetak event card dalam halaman Admin
    $url = "/fik-corner/admin/detail-kegiatan.php?id=" . $data['id_kegiatan'];
 
    echo "<a href='" . $url . "'>" . 

@@ -42,26 +42,26 @@
          <div class="bg-gray-100 pt-5 font-sans">
             <div class="max-w-full max-lg:max-w-3xl max-md:max-w-sm mx-auto">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
-                  Kegiatan Ditolak (<?= count($kegiatan_ditolak); ?>)
+                  Kegiatan Ditolak (<?= count($kegiatan_ditolak); ?>) <!--Untuk Menghitung ada berapa kegiatan yang ditolak-->
                </h2>
                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                   <?php 
                      foreach ($kegiatan_ditolak as $data) {
                         $url = "detail_kegiatan_admin.php?id=" . $data['id_kegiatan'];
 
-                        include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/event_card.php');
+                        include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/event_card.php'); // PHP untuk menampilkan card sebagai kegiatan yang ditolak
                      }
                   ?>
                </div>
             </div>
             <div class="max-w-full max-lg:max-w-4xl max-md:max-w-sm mx-auto my-10">
                <h2 class="text-gray-800 text-2xl max-sm:text-2xl font-bold mb-4">
-                  Penyelenggara Ditolak (<?= count($penyelenggara_ditolak); ?>)
+                  Penyelenggara Ditolak (<?= count($penyelenggara_ditolak); ?>) <!--Untuk Menghitung ada berapa penyelenggara yang ditolak-->
                </h2>
                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
                   <?php 
                      foreach ($penyelenggara_ditolak as $data) {
-                        include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/penyelenggara_card.php');
+                        include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/admin/shared/penyelenggara_card.php'); // PHP untuk menampilkan card sebagai penyelenggara yang ditolak
                      }
                   ?>
                </div>

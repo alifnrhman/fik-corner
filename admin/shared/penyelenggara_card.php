@@ -1,3 +1,4 @@
+<!--Untuk Menampilkan card yang bersangkutan dengan penyelenggara, contohnya adalah deskripsi kegiatan, penanggung jawab dsb-->
 <div
    class="bg-white grid sm:grid-cols-1 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full max-w-full max-sm:max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto">
    <div class="p-6 flex flex-col">

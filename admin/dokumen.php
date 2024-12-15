@@ -1,8 +1,10 @@
+<!--PHP untuk menampilkan dokumen pendukung pada tab baru-->
 <?php
     include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/connection.php');
     $id_penyelenggara = $_GET['id'];
 
-    $stmt = $connection->prepare("SELECT dokumen_pendukung FROM penyelenggara WHERE id_penyelenggara = ?");
+    // Query untuk mengambil dokumen pendukung dengan menggunakan parameter id
+    $stmt = $connection->prepare("SELECT dokumen_pendukung FROM penyelenggara WHERE id_penyelenggara = ?"); 
     $stmt->bind_param("i", $id_penyelenggara);
     $stmt->execute();
     $result = $stmt->get_result();

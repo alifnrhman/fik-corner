@@ -10,6 +10,8 @@
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/header.php');
    include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/connection.php');
 ?>
+
+<!--Halaman login-->
 <main>
    <div class="font-[sans-serif] max-w-7xl mx-auto h-screen">
       <div class="grid md:grid-cols-2 items-center gap-8 h-full">
@@ -35,7 +37,7 @@
                <div class="relative flex items-center">
                   <input name="password" id="password" type="password" required
                      class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600"
-                     placeholder="Masukkan password" />
+                     placeholder="Masukkan password" /> <!--Menggunakan input password agar tidak transparan-->
                   <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
                      class="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128" id="togglePassword"
                      onclick="togglePassword()">
@@ -46,7 +48,7 @@
                </div>
                <?php
 							if (isset($_COOKIE['message'])) {
-								echo "<p class='mt-4 font-semibold text-primary'>" . $_COOKIE['message'] . "</p>";
+								echo "<p class='mt-4 font-semibold text-primary'>" . $_COOKIE['message'] . "</p>"; // Jika password salah maka akan keluar pesan
 							}
 						?>
             </div>
