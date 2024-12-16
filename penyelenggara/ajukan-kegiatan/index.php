@@ -35,6 +35,7 @@
                            <input name="nama_kegiatan" type="text" required
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300"
                               placeholder="Masukkan nama kegiatan" maxlength="100" />
+                           <p class="text-xs text-gray-400 mt-1.5">Maksimal 100 karakter.</p>
                         </div>
 
                         <div class="basis-2/5">
@@ -56,14 +57,16 @@
                            <label class="text-gray-800 text-[15px] mb-2 block">Deskripsi Singkat</label>
                            <textarea name="deskripsi_singkat" rows="3"
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300 resize-none"
-                              placeholder="Masukkan deskripsi singkat" required></textarea>
+                              placeholder="Masukkan deskripsi singkat" required maxlength="200"></textarea>
+                           <p class="text-xs text-gray-400 mt-1.5">Maksimal 200 karakter.</p>
                         </div>
 
                         <div class="basis-8/12 mt-4">
                            <label class="text-gray-800 text-[15px] mb-2 block">Deskripsi Lengkap</label>
                            <textarea name="deskripsi_lengkap" rows="3"
                               class="w-full text-sm text-gray-800 bg-white px-4 py-3.5 rounded-md outline-primary border border-gray-300 resize-y"
-                              placeholder="Masukkan deskripsi lengkap" required></textarea>
+                              placeholder="Masukkan deskripsi lengkap" required maxlength="3000"></textarea>
+                           <p class="text-xs text-gray-400 mt-1.5">Maksimal 3000 karakter.</p>
                         </div>
                      </div>
 

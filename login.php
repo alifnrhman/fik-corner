@@ -77,8 +77,8 @@
          <!-- Gambar tampilan untuk mempercantik halaman -->
          <div
             class="h-full md:py-6 flex items-center relative max-md:before:hidden before:absolute before:bg-gradient-to-r before:from-gray-50 before:via-[#ff880041] before:to-[#ff6500] before:h-full before:w-full before:right-0 before:z-0">
-            <img src="assets\fik-corner-md.png" class="rounded-md lg:w-4/5 md:w-11/12 z-50 relative"
-               alt="Dining Experience" />
+            <img src="/fik-corner/assets/fik-corner-md.png" class="rounded-md lg:w-4/5 md:w-11/12 z-50 relative"
+               alt="FIK Corner" />
          </div>
       </div>
    </div>
