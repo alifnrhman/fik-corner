@@ -83,8 +83,5 @@
       </div>
    </div>
 </main>
-
-<?php
-   //Menyertakan footer halaman
-   include($_SERVER['DOCUMENT_ROOT'] . '/fik-corner/includes/footer.php');
-?>
+</body>
+</html>
